@@ -1,0 +1,332 @@
+/* ============================================================
+   products.css — 产品中心（整屏分类橱窗）
+   仅 products.html 引用
+   ------------------------------------------------------------
+   结构：
+   .pc-hero        整屏容器（100svh）
+     .pc-bgs       六张分类背景图，交叉淡入
+     .pc-scrim     压暗层
+     .pc-body      左侧大标题 + 涵盖范围
+     .pc-rail      白框分类卡（横向滑动）
+     .pc-track     底部滑动条（可拖动）
+   ============================================================ */
+
+/* ===================== 页面头部：悬浮在橱窗之上 ===================== */
+.page-products .topbar { display: none; }
+
+.page-products .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom-color: transparent;
+  transition: background var(--dur-slow) var(--ease-out),
+              border-color var(--dur-slow) var(--ease-out);
+}
+
+/* 当前栏目：沿用全站统一的胶囊底提示（见 site.css），这里只调整未选中项的颜色 */
+.page-products .site-header .nav__link:not([aria-current="page"]) { color: rgba(255, 255, 255, 0.7); }
+.page-products .site-header .nav__link:hover { color: #fff; }
+
+
+.page-products .site-header .nav-toggle { border-color: rgba(255, 255, 255, 0.45); }
+.page-products .site-header .nav-toggle span { background: #fff; }
+
+/* 首屏的转化入口交给卡片与下方区块，头部按钮让位 */
+.page-products .header__actions > .btn--primary { display: none; }
+
+.page-products .site-header.is-solid {
+  background: var(--navy-900);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ===================== 整屏橱窗 ===================== */
+.pc-hero {
+  position: relative;
+  height: 100vh;
+  height: min(100svh, 920px);
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--navy-900);
+  isolation: isolate;
+}
+
+/* 背景：单张固定图（客户指定 1.6张图/封面1.jpg，不再随分类切换） */
+.pc-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: pc-drift 18s var(--ease-out) forwards;
+}
+
+@keyframes pc-drift {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1); }
+}
+
+/* 压暗层：左侧重（压文字）、底部渐变（压卡片） */
+.pc-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* 顶部：压住固定头部，这张底图上沿偏亮 */
+    linear-gradient(180deg,
+      rgba(9, 19, 31, 0.55) 0%,
+      rgba(9, 19, 31, 0.22) 12%,
+      rgba(9, 19, 31, 0) 22%),
+    linear-gradient(90deg,
+      rgba(9, 19, 31, 0.9) 0%,
+      rgba(9, 19, 31, 0.68) 32%,
+      rgba(9, 19, 31, 0.2) 64%,
+      rgba(9, 19, 31, 0.46) 100%),
+    linear-gradient(0deg,
+      rgba(9, 19, 31, 0.86) 0%,
+      rgba(9, 19, 31, 0.26) 34%,
+      rgba(9, 19, 31, 0) 62%);
+}
+
+/* 文字区 */
+.pc-body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  padding-top: clamp(84px, 10vh, 120px);
+  pointer-events: none;
+}
+
+.pc-copy { max-width: 420px; color: var(--text-inverse); }
+
+.pc-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: var(--weight-regular);
+  line-height: 0.98;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+}
+
+.pc-title span { display: block; }
+
+/* 英文站标题是两行，比中文高一倍，单独收一档 */
+html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
+
+.pc-including { margin-top: clamp(1.125rem, 2.6vh, 1.875rem); max-width: 402px; }
+
+.pc-including__label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.94);
+  margin-bottom: 0.6875rem;
+}
+
+.pc-including__list {
+  font-size: var(--text-xs);
+  line-height: 1.95;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ===================== 分类卡片轨道 ===================== */
+.pc-rail-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding-bottom: clamp(1.5rem, 4.6vh, 3.125rem);
+}
+
+.pc-rail {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding-top: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  /* 右侧越过容器边界延伸到屏幕外，露出下一张的边缘提示可滑动 */
+  margin-right: calc(-1 * (max(0px, (100vw - var(--container-max))) / 2 + var(--container-pad)));
+}
+
+.pc-rail::-webkit-scrollbar { display: none; }
+
+.pc-card {
+  flex: 0 0 auto;
+  width: 208px;
+  scroll-snap-align: start;
+  transition: width var(--dur-slow) var(--ease-out);
+}
+
+.pc-card__media {
+  position: relative;
+  display: block;
+  height: 284px;
+  border-radius: var(--radius-lg);
+  background: var(--gray-0);
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(9, 19, 31, 0.42);
+  transition: height var(--dur-slow) var(--ease-out);
+}
+
+.pc-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 六张分类图是 2.92:1 横幅，裁进 0.73:1 的卡面时按主体位置微调水平裁切点 */
+.pc-card[data-cat="cabinets"] .pc-card__media img { object-position: 63% 50%; }
+.pc-card[data-cat="carts"]    .pc-card__media img { object-position: 48% 50%; }
+.pc-card[data-cat="stands"]   .pc-card__media img { object-position: 50% 50%; }
+.pc-card[data-cat="benches"]  .pc-card__media img { object-position: 50% 50%; }
+.pc-card[data-cat="grills"]   .pc-card__media img { object-position: 50% 50%; }
+.pc-card[data-cat="others"]   .pc-card__media img { object-position: 34% 55%; }
+
+.pc-card__label {
+  display: block;
+  margin-top: 0.8125rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.pc-card.is-active { width: 256px; }
+.pc-card.is-active .pc-card__media { height: 348px; }
+.pc-card.is-active .pc-card__label { color: #fff; }
+
+/* 底部滑动条 */
+.pc-track-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: clamp(1.125rem, 3vh, 1.875rem);
+}
+
+/* 六个分类一屏放得下时（超宽屏）隐藏滑动条，避免出现拖不动的死控件 */
+.pc-track-wrap.is-idle { display: none; }
+
+.pc-track {
+  position: relative;
+  flex: 0 1 520px;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.pc-track:focus-visible { outline: 2px solid var(--cta); outline-offset: 6px; }
+
+.pc-track__thumb {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: var(--radius-full);
+  background: #fff;
+}
+
+.pc-track:hover .pc-track__thumb,
+.pc-track.is-dragging .pc-track__thumb { height: 4px; margin-top: -2px; }
+
+.pc-track__hint {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+  white-space: nowrap;
+}
+
+/* ===================== 响应式 ===================== */
+@media (max-width: 1024px) {
+  .pc-card { width: 176px; }
+  .pc-card__media { height: 240px; }
+  .pc-card.is-active { width: 214px; }
+  .pc-card.is-active .pc-card__media { height: 292px; }
+}
+
+/* 矮屏（13 寸笔记本 1440×800 等）压缩文字与卡片高度，避免与卡片重叠 */
+@media (max-height: 820px) and (min-width: 901px) {
+  .pc-body { padding-top: 92px; }
+  .pc-title { font-size: clamp(2.125rem, 4.2vw, 3.875rem); }
+  html[lang="en"] .pc-title { font-size: clamp(1.875rem, 3.6vw, 3.125rem); }
+  .pc-including { margin-top: 1rem; max-width: 330px; }
+  .pc-including__list { line-height: 1.78; }
+  .pc-card__media { height: 270px; }
+  .pc-card.is-active .pc-card__media { height: 330px; }
+}
+
+@media (max-width: 900px) {
+  .pc-hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .pc-body {
+    position: relative;
+    inset: auto;
+    flex: 1 1 auto;
+    padding: var(--nav-height) 0 0;
+    align-items: flex-start;
+  }
+
+  .pc-copy { max-width: none; }
+  .pc-title { font-size: clamp(2.25rem, 9vw, 3.25rem); }
+  .pc-including { max-width: none; margin-top: 1.125rem; }
+  .pc-including__list { font-size: 0.6875rem; letter-spacing: 0.05em; line-height: 1.85; }
+
+  .pc-rail-wrap {
+    position: relative;
+    margin-top: 1.875rem;
+    padding-bottom: 2.125rem;
+  }
+
+  .pc-rail { margin-right: calc(-1 * var(--container-pad)); gap: 14px; }
+  .pc-card { width: 118px; }
+  .pc-card__media { height: 168px; }
+  .pc-card.is-active { width: 148px; }
+  .pc-card.is-active .pc-card__media { height: 212px; }
+  .pc-card__label { font-size: 0.625rem; }
+
+  .pc-track { flex: 1 1 auto; }
+  .pc-track__hint { display: none; }
+}
+
+@media (max-width: 560px) {
+  .pc-card { width: 104px; }
+  .pc-card__media { height: 148px; }
+  .pc-card.is-active { width: 128px; }
+  .pc-card.is-active .pc-card__media { height: 186px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-bg-img { animation: none; }
+}

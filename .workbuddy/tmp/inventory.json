@@ -1,0 +1,2298 @@
+[
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB2704A Top chest",
+  "files": [
+   {
+    "name": "XTB2704A Top chest.png",
+    "w": 258,
+    "h": 432,
+    "alpha": false,
+    "kb": 31
+   },
+   {
+    "name": "png.png",
+    "w": 3000,
+    "h": 3000,
+    "alpha": true,
+    "kb": 2402
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "MAC5602",
+  "files": [
+   {
+    "name": "MAC5602.png",
+    "w": 250,
+    "h": 429,
+    "alpha": false,
+    "kb": 34
+   },
+   {
+    "name": "png.png",
+    "w": 1965,
+    "h": 1281,
+    "alpha": true,
+    "kb": 1255
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB6302",
+  "files": [
+   {
+    "name": "XTB6302.png",
+    "w": 248,
+    "h": 445,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 1204
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB4606 Top chest",
+  "files": [
+   {
+    "name": "XTB4606 Top chest.png",
+    "w": 239,
+    "h": 430,
+    "alpha": false,
+    "kb": 35
+   },
+   {
+    "name": "png.png",
+    "w": 2455,
+    "h": 1825,
+    "alpha": true,
+    "kb": 3077
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "TC421804AHMC Top chest",
+  "files": [
+   {
+    "name": "TC421804AHMC Top chest.png",
+    "w": 248,
+    "h": 412,
+    "alpha": false,
+    "kb": 32
+   },
+   {
+    "name": "png.png",
+    "w": 1556,
+    "h": 874,
+    "alpha": true,
+    "kb": 896
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "TC602608A Top chest",
+  "files": [
+   {
+    "name": "TC602608A Top chest.png",
+    "w": 255,
+    "h": 416,
+    "alpha": false,
+    "kb": 23
+   },
+   {
+    "name": "png.png",
+    "w": 3588,
+    "h": 1767,
+    "alpha": true,
+    "kb": 1729
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB72602B Middle cabinet",
+  "files": [
+   {
+    "name": "XTB72602B Middle cabinet.png",
+    "w": 247,
+    "h": 421,
+    "alpha": false,
+    "kb": 26
+   },
+   {
+    "name": "png.png",
+    "w": 1417,
+    "h": 754,
+    "alpha": true,
+    "kb": 425
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "TC421806A Top chest",
+  "files": [
+   {
+    "name": "TC421806A Top chest.png",
+    "w": 245,
+    "h": 429,
+    "alpha": false,
+    "kb": 35
+   },
+   {
+    "name": "png.png",
+    "w": 3428,
+    "h": 2136,
+    "alpha": true,
+    "kb": 5885
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB75603A Top chest",
+  "files": [
+   {
+    "name": "XTB75603A Top chest.png",
+    "w": 240,
+    "h": 418,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 478,
+    "h": 350,
+    "alpha": true,
+    "kb": 107
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTB75607A Top chest",
+  "files": [
+   {
+    "name": "XTB75607A Top chest.png",
+    "w": 248,
+    "h": 417,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 474,
+    "h": 348,
+    "alpha": true,
+    "kb": 111
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTC3",
+  "files": [
+   {
+    "name": "XTC3.png",
+    "w": 242,
+    "h": 426,
+    "alpha": false,
+    "kb": 23
+   },
+   {
+    "name": "png.png",
+    "w": 564,
+    "h": 604,
+    "alpha": true,
+    "kb": 68
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "XTC9",
+  "files": [
+   {
+    "name": "XTC9.png",
+    "w": 251,
+    "h": 415,
+    "alpha": false,
+    "kb": 47
+   },
+   {
+    "name": "png.png",
+    "w": 573,
+    "h": 478,
+    "alpha": true,
+    "kb": 175
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "MAC3017",
+  "files": [
+   {
+    "name": "MAC3017.png",
+    "w": 257,
+    "h": 431,
+    "alpha": false,
+    "kb": 27
+   },
+   {
+    "name": "png.png",
+    "w": 634,
+    "h": 299,
+    "alpha": true,
+    "kb": 97
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "工具箱",
+  "folder": "MAC6003",
+  "files": [
+   {
+    "name": "MAC6003.png",
+    "w": 256,
+    "h": 417,
+    "alpha": false,
+    "kb": 52
+   },
+   {
+    "name": "png.png",
+    "w": 637,
+    "h": 293,
+    "alpha": true,
+    "kb": 293
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GARAGE SRORAGE CABINET 1",
+  "files": [
+   {
+    "name": "GARAGE SRORAGE CABINET 1.png",
+    "w": 248,
+    "h": 398,
+    "alpha": false,
+    "kb": 40
+   },
+   {
+    "name": "png.png",
+    "w": 2704,
+    "h": 1968,
+    "alpha": true,
+    "kb": 3777
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS281801WP 1 drawer bottom cabinet",
+  "files": [
+   {
+    "name": "GS281801WP 1 drawer bottom cabinet.png",
+    "w": 253,
+    "h": 433,
+    "alpha": false,
+    "kb": 42
+   },
+   {
+    "name": "png.png",
+    "w": 1764,
+    "h": 1812,
+    "alpha": true,
+    "kb": 1952
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS281832WP Bottom cabinet",
+  "files": [
+   {
+    "name": "GS281832WP Bottom cabinet.png",
+    "w": 260,
+    "h": 426,
+    "alpha": false,
+    "kb": 39
+   },
+   {
+    "name": "png.png",
+    "w": 1744,
+    "h": 1836,
+    "alpha": true,
+    "kb": 1921
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GARAGE SRORAGE CABINET 3",
+  "files": [
+   {
+    "name": "GARAGE SRORAGE CABINET 3.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 13316
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "新品 Wall cabinet 1",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 3849
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 315,
+    "h": 109,
+    "alpha": false,
+    "kb": 11
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "新品 Wall cabinet 2",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 2503
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 315,
+    "h": 109,
+    "alpha": false,
+    "kb": 11
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "新品 drawer bottom cabinet 1",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 6546
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 313,
+    "h": 147,
+    "alpha": false,
+    "kb": 16
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "新品 drawer bottom cabinet 2",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 6426
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 314,
+    "h": 148,
+    "alpha": false,
+    "kb": 14
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "新品 Side Locker",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 7024
+   },
+   {
+    "name": "产品信息.png",
+    "w": 315,
+    "h": 238,
+    "alpha": false,
+    "kb": 18
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS2401 Wall cabinet",
+  "files": [
+   {
+    "name": "GS2401 Wall cabinet.png",
+    "w": 251,
+    "h": 396,
+    "alpha": false,
+    "kb": 35
+   },
+   {
+    "name": "png.png",
+    "w": 528,
+    "h": 388,
+    "alpha": true,
+    "kb": 129
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS2403B1 drawer bottom cabinet",
+  "files": [
+   {
+    "name": "GS2403B1 drawer bottom cabinet.png",
+    "w": 261,
+    "h": 400,
+    "alpha": false,
+    "kb": 48
+   },
+   {
+    "name": "png.png",
+    "w": 339,
+    "h": 452,
+    "alpha": true,
+    "kb": 180
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS2402 Bottom cabinet",
+  "files": [
+   {
+    "name": "GS2402 Bottom cabinet.png",
+    "w": 266,
+    "h": 412,
+    "alpha": false,
+    "kb": 47
+   },
+   {
+    "name": "png.png",
+    "w": 354,
+    "h": 442,
+    "alpha": true,
+    "kb": 167
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS3002LR Side Locker",
+  "files": [
+   {
+    "name": "GS3002LR Side Locker.png",
+    "w": 252,
+    "h": 403,
+    "alpha": false,
+    "kb": 37
+   },
+   {
+    "name": "png.png",
+    "w": 437,
+    "h": 941,
+    "alpha": true,
+    "kb": 408
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GARAGE SRORAGE CABINET 2",
+  "files": [
+   {
+    "name": "GARAGE SRORAGE CABINET 2.png",
+    "w": 254,
+    "h": 367,
+    "alpha": false,
+    "kb": 22
+   },
+   {
+    "name": "png.png",
+    "w": 2628,
+    "h": 1804,
+    "alpha": true,
+    "kb": 2682
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS481870WP Side Locker",
+  "files": [
+   {
+    "name": "GS481870WP Side Locker.png",
+    "w": 273,
+    "h": 441,
+    "alpha": false,
+    "kb": 30
+   },
+   {
+    "name": "png.png",
+    "w": 1912,
+    "h": 2660,
+    "alpha": true,
+    "kb": 3333
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS361870WP Side Locker",
+  "files": [
+   {
+    "name": "GS361870WP Side Locker.png",
+    "w": 250,
+    "h": 427,
+    "alpha": false,
+    "kb": 29
+   },
+   {
+    "name": "png.png",
+    "w": 1472,
+    "h": 2636,
+    "alpha": true,
+    "kb": 2612
+   }
+  ]
+ },
+ {
+  "cat": "工具柜",
+  "subcat": "组合柜",
+  "folder": "GS281228WP Wall cabinet",
+  "files": [
+   {
+    "name": "GS281228WP Wall cabinet.png",
+    "w": 248,
+    "h": 425,
+    "alpha": false,
+    "kb": 41
+   },
+   {
+    "name": "png.png",
+    "w": 1972,
+    "h": 1920,
+    "alpha": true,
+    "kb": 2662
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB220",
+  "files": [
+   {
+    "name": "XTB220.png",
+    "w": 259,
+    "h": 455,
+    "alpha": false,
+    "kb": 56
+   },
+   {
+    "name": "png.png",
+    "w": 1705,
+    "h": 1508,
+    "alpha": true,
+    "kb": 2326
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB75612B Bottom cabinet",
+  "files": [
+   {
+    "name": "XTB75612B Bottom cabinet.png",
+    "w": 264,
+    "h": 447,
+    "alpha": false,
+    "kb": 47
+   },
+   {
+    "name": "png.png",
+    "w": 506,
+    "h": 503,
+    "alpha": true,
+    "kb": 170
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "OPE704",
+  "files": [
+   {
+    "name": "OPE704.png",
+    "w": 247,
+    "h": 437,
+    "alpha": false,
+    "kb": 47
+   },
+   {
+    "name": "png.png",
+    "w": 444,
+    "h": 451,
+    "alpha": true,
+    "kb": 206
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "OPE4205",
+  "files": [
+   {
+    "name": "OPE4205.png",
+    "w": 247,
+    "h": 431,
+    "alpha": false,
+    "kb": 33
+   },
+   {
+    "name": "png.png",
+    "w": 528,
+    "h": 501,
+    "alpha": true,
+    "kb": 185
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "OPE5105",
+  "files": [
+   {
+    "name": "OPE5105.png",
+    "w": 248,
+    "h": 448,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 802
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "TC421809BHMC Bottom cabinet",
+  "files": [
+   {
+    "name": "TC421809BHMC Bottom cabniet.png",
+    "w": 290,
+    "h": 466,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 1902,
+    "h": 1456,
+    "alpha": true,
+    "kb": 1435
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "FR5607B Bottom cabinet",
+  "files": [
+   {
+    "name": "FR5607B Bottom cabinet.png",
+    "w": 266,
+    "h": 435,
+    "alpha": false,
+    "kb": 53
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 1777
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB6210B",
+  "files": [
+   {
+    "name": "XTB6210B.png",
+    "w": 285,
+    "h": 446,
+    "alpha": false,
+    "kb": 62
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB4609BS",
+  "files": [
+   {
+    "name": "XTB4609BS.png",
+    "w": 262,
+    "h": 458,
+    "alpha": false,
+    "kb": 52
+   },
+   {
+    "name": "png.png",
+    "w": 533,
+    "h": 456,
+    "alpha": true,
+    "kb": 195
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB6210BS",
+  "files": [
+   {
+    "name": "XTB6210BS.png",
+    "w": 263,
+    "h": 427,
+    "alpha": false,
+    "kb": 60
+   },
+   {
+    "name": "png.png",
+    "w": 410,
+    "h": 392,
+    "alpha": true,
+    "kb": 148
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB6210C",
+  "files": [
+   {
+    "name": "XTB6210C.png",
+    "w": 249,
+    "h": 426,
+    "alpha": false,
+    "kb": 38
+   },
+   {
+    "name": "png.png",
+    "w": 6490,
+    "h": 4202,
+    "alpha": true,
+    "kb": 18630
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB405",
+  "files": [
+   {
+    "name": "XTB405.png",
+    "w": 258,
+    "h": 423,
+    "alpha": false,
+    "kb": 55
+   },
+   {
+    "name": "png.png",
+    "w": 3456,
+    "h": 3805,
+    "alpha": true,
+    "kb": 11437
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "TC292105",
+  "files": [
+   {
+    "name": "TC292105.png",
+    "w": 265,
+    "h": 458,
+    "alpha": false,
+    "kb": 51
+   },
+   {
+    "name": "png.png",
+    "w": 1269,
+    "h": 1332,
+    "alpha": true,
+    "kb": 664
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "TC602610B Bottom cabinet",
+  "files": [
+   {
+    "name": "TC602610B Bottom cabinet.png",
+    "w": 255,
+    "h": 431,
+    "alpha": false,
+    "kb": 31
+   },
+   {
+    "name": "png.png",
+    "w": 3588,
+    "h": 2644,
+    "alpha": true,
+    "kb": 2980
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "新品",
+  "files": [
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2806,
+    "alpha": true,
+    "kb": 14216
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 240,
+    "h": 68,
+    "alpha": false,
+    "kb": 5
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "MAC2707B",
+  "files": [
+   {
+    "name": "MAC2707B.png",
+    "w": 249,
+    "h": 420,
+    "alpha": false,
+    "kb": 49
+   },
+   {
+    "name": "png.png",
+    "w": 2791,
+    "h": 3257,
+    "alpha": true,
+    "kb": 7760
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "MAC7006",
+  "files": [
+   {
+    "name": "MAC7006.png",
+    "w": 251,
+    "h": 419,
+    "alpha": false,
+    "kb": 37
+   },
+   {
+    "name": "png.png",
+    "w": 4800,
+    "h": 4912,
+    "alpha": true,
+    "kb": 9560
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB26051B",
+  "files": [
+   {
+    "name": "XTB26051B.png",
+    "w": 254,
+    "h": 424,
+    "alpha": false,
+    "kb": 55
+   },
+   {
+    "name": "png.png",
+    "w": 363,
+    "h": 421,
+    "alpha": true,
+    "kb": 194
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB72706C Bottom cabinet",
+  "files": [
+   {
+    "name": "XTB72706C Bottom cabinet.png",
+    "w": 247,
+    "h": 439,
+    "alpha": false,
+    "kb": 32
+   },
+   {
+    "name": "png.png",
+    "w": 4181,
+    "h": 5213,
+    "alpha": true,
+    "kb": 3738
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "TC421806B Bottom cabinet",
+  "files": [
+   {
+    "name": "TC421806B Bottom cabinet.png",
+    "w": 261,
+    "h": 424,
+    "alpha": false,
+    "kb": 40
+   },
+   {
+    "name": "png.png",
+    "w": 4024,
+    "h": 4058,
+    "alpha": true,
+    "kb": 10195
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB4209B Bottom cabinet",
+  "files": [
+   {
+    "name": "XTB4209B Bottom cabinet.png",
+    "w": 255,
+    "h": 426,
+    "alpha": false,
+    "kb": 34
+   },
+   {
+    "name": "png.png",
+    "w": 3000,
+    "h": 3000,
+    "alpha": true,
+    "kb": 3003
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "工具推车",
+  "folder": "XTB4609",
+  "files": [
+   {
+    "name": "XTB4609.png",
+    "w": 257,
+    "h": 426,
+    "alpha": false,
+    "kb": 34
+   },
+   {
+    "name": "png.png",
+    "w": 771,
+    "h": 597,
+    "alpha": true,
+    "kb": 210
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "焊接车",
+  "folder": "OPE900 Welding cart",
+  "files": [
+   {
+    "name": "OPE900 Welding cart.png",
+    "w": 250,
+    "h": 441,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "OPE900.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 929
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "TC301",
+  "files": [
+   {
+    "name": "TC301.png",
+    "w": 255,
+    "h": 440,
+    "alpha": false,
+    "kb": 30
+   },
+   {
+    "name": "png.png",
+    "w": 572,
+    "h": 527,
+    "alpha": true,
+    "kb": 218
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "TC302",
+  "files": [
+   {
+    "name": "TC302.png",
+    "w": 263,
+    "h": 422,
+    "alpha": false,
+    "kb": 37
+   },
+   {
+    "name": "png.png",
+    "w": 591,
+    "h": 609,
+    "alpha": true,
+    "kb": 358
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "AMZ3031",
+  "files": [
+   {
+    "name": "AMZ3031.png",
+    "w": 256,
+    "h": 424,
+    "alpha": false,
+    "kb": 36
+   },
+   {
+    "name": "png.png",
+    "w": 3054,
+    "h": 3450,
+    "alpha": true,
+    "kb": 3155
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "AMZ3032",
+  "files": [
+   {
+    "name": "AMZ3032.png",
+    "w": 242,
+    "h": 417,
+    "alpha": false,
+    "kb": 44
+   },
+   {
+    "name": "png.png",
+    "w": 1827,
+    "h": 1865,
+    "alpha": true,
+    "kb": 2213
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "OPE380",
+  "files": [
+   {
+    "name": "OPE380.png",
+    "w": 263,
+    "h": 424,
+    "alpha": false,
+    "kb": 39
+   },
+   {
+    "name": "png.png",
+    "w": 3474,
+    "h": 3438,
+    "alpha": true,
+    "kb": 3364
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "TC310",
+  "files": [
+   {
+    "name": "TC310.png",
+    "w": 254,
+    "h": 415,
+    "alpha": false,
+    "kb": 31
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 883
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "TC309",
+  "files": [
+   {
+    "name": "TC309.png",
+    "w": 241,
+    "h": 427,
+    "alpha": false,
+    "kb": 33
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 1169
+   }
+  ]
+ },
+ {
+  "cat": "工具车",
+  "subcat": "手推车",
+  "folder": "TC311703WAL",
+  "files": [
+   {
+    "name": "TC311703WAL.png",
+    "w": 243,
+    "h": 419,
+    "alpha": false,
+    "kb": 46
+   },
+   {
+    "name": "png.png",
+    "w": 2033,
+    "h": 2255,
+    "alpha": true,
+    "kb": 3169
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS500",
+  "files": [
+   {
+    "name": "MSS500.png",
+    "w": 244,
+    "h": 428,
+    "alpha": false,
+    "kb": 26
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 580
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "SH106",
+  "files": [
+   {
+    "name": "SH106.png",
+    "w": 267,
+    "h": 429,
+    "alpha": false,
+    "kb": 34
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "AC41C",
+  "files": [
+   {
+    "name": "AC41C.png",
+    "w": 252,
+    "h": 447,
+    "alpha": false,
+    "kb": 28
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "AC42",
+  "files": [
+   {
+    "name": "AC42.png",
+    "w": 249,
+    "h": 417,
+    "alpha": false,
+    "kb": 29
+   },
+   {
+    "name": "png.png",
+    "w": 233,
+    "h": 304,
+    "alpha": true,
+    "kb": 39
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "AC43",
+  "files": [
+   {
+    "name": "AC43.png",
+    "w": 253,
+    "h": 421,
+    "alpha": false,
+    "kb": 30
+   },
+   {
+    "name": "png.png",
+    "w": 229,
+    "h": 324,
+    "alpha": true,
+    "kb": 43
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "SH4129",
+  "files": [
+   {
+    "name": "SH4129.png",
+    "w": 253,
+    "h": 410,
+    "alpha": false,
+    "kb": 26
+   },
+   {
+    "name": "png.png",
+    "w": 3496,
+    "h": 2880,
+    "alpha": true,
+    "kb": 3678
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "SH4026",
+  "files": [
+   {
+    "name": "SH4026.png",
+    "w": 266,
+    "h": 469,
+    "alpha": false,
+    "kb": 28
+   },
+   {
+    "name": "png.png",
+    "w": 3528,
+    "h": 2880,
+    "alpha": true,
+    "kb": 3546
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS502",
+  "files": [
+   {
+    "name": "MSS502.png",
+    "w": 253,
+    "h": 417,
+    "alpha": false,
+    "kb": 34
+   },
+   {
+    "name": "png.png",
+    "w": 360,
+    "h": 335,
+    "alpha": true,
+    "kb": 57
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS507",
+  "files": [
+   {
+    "name": "MSS507.png",
+    "w": 250,
+    "h": 430,
+    "alpha": false,
+    "kb": 28
+   },
+   {
+    "name": "png.png",
+    "w": 535,
+    "h": 447,
+    "alpha": true,
+    "kb": 72
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS508A",
+  "files": [
+   {
+    "name": "MSS508A.png",
+    "w": 246,
+    "h": 431,
+    "alpha": false,
+    "kb": 29
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 669
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS509",
+  "files": [
+   {
+    "name": "MSS509.png",
+    "w": 244,
+    "h": 411,
+    "alpha": false,
+    "kb": 33
+   },
+   {
+    "name": "png.png",
+    "w": 707,
+    "h": 631,
+    "alpha": true,
+    "kb": 155
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS250",
+  "files": [
+   {
+    "name": "MSS250.png",
+    "w": 274,
+    "h": 421,
+    "alpha": false,
+    "kb": 35
+   },
+   {
+    "name": "png.png",
+    "w": 1000,
+    "h": 1000,
+    "alpha": true,
+    "kb": 304
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS2400",
+  "files": [
+   {
+    "name": "MSS2400.png",
+    "w": 252,
+    "h": 416,
+    "alpha": false,
+    "kb": 29
+   },
+   {
+    "name": "png.png",
+    "w": 324,
+    "h": 243,
+    "alpha": true,
+    "kb": 44
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "MSS510",
+  "files": [
+   {
+    "name": "MSS510.png",
+    "w": 253,
+    "h": 422,
+    "alpha": false,
+    "kb": 49
+   },
+   {
+    "name": "png.png",
+    "w": 2362,
+    "h": 2362,
+    "alpha": true,
+    "kb": 1974
+   }
+  ]
+ },
+ {
+  "cat": "支架",
+  "subcat": "",
+  "folder": "SH107 WOOD BARCKET",
+  "files": [
+   {
+    "name": "SH107 WOOD BARCKET.png",
+    "w": 271,
+    "h": 425,
+    "alpha": false,
+    "kb": 31
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB600",
+  "files": [
+   {
+    "name": "WB600.png",
+    "w": 264,
+    "h": 445,
+    "alpha": false,
+    "kb": 24
+   },
+   {
+    "name": "png.png",
+    "w": 2000,
+    "h": 2000,
+    "alpha": true,
+    "kb": 795
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB452401WP",
+  "files": [
+   {
+    "name": "WB452401WP.png",
+    "w": 249,
+    "h": 437,
+    "alpha": false,
+    "kb": 50
+   },
+   {
+    "name": "png.png",
+    "w": 1000,
+    "h": 1000,
+    "alpha": true,
+    "kb": 508
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB603",
+  "files": [
+   {
+    "name": "WB603.png",
+    "w": 257,
+    "h": 448,
+    "alpha": false,
+    "kb": 24
+   },
+   {
+    "name": "png.png",
+    "w": 772,
+    "h": 449,
+    "alpha": true,
+    "kb": 114
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB602C",
+  "files": [
+   {
+    "name": "WB602C.png",
+    "w": 261,
+    "h": 451,
+    "alpha": false,
+    "kb": 31
+   },
+   {
+    "name": "png.png",
+    "w": 595,
+    "h": 425,
+    "alpha": true,
+    "kb": 228
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "CT-4FT",
+  "files": [
+   {
+    "name": "CT-4FT.png",
+    "w": 261,
+    "h": 436,
+    "alpha": false,
+    "kb": 28
+   },
+   {
+    "name": "png.png",
+    "w": 1482,
+    "h": 1262,
+    "alpha": true,
+    "kb": 735
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "CT-4FT-A",
+  "files": [
+   {
+    "name": "CT-4FT-A.png",
+    "w": 260,
+    "h": 443,
+    "alpha": false,
+    "kb": 31
+   },
+   {
+    "name": "png.png",
+    "w": 1482,
+    "h": 1262,
+    "alpha": true,
+    "kb": 733
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "CT-4FT-C",
+  "files": [
+   {
+    "name": "CT-4FT-C.png",
+    "w": 261,
+    "h": 453,
+    "alpha": false,
+    "kb": 22
+   },
+   {
+    "name": "png.png",
+    "w": 3840,
+    "h": 2879,
+    "alpha": true,
+    "kb": 1442
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB6024",
+  "files": [
+   {
+    "name": "WB6024.png",
+    "w": 251,
+    "h": 424,
+    "alpha": false,
+    "kb": 22
+   },
+   {
+    "name": "png.png",
+    "w": 5760,
+    "h": 3840,
+    "alpha": true,
+    "kb": 3391
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "WB4824",
+  "files": [
+   {
+    "name": "WB4824.png",
+    "w": 259,
+    "h": 427,
+    "alpha": false,
+    "kb": 23
+   },
+   {
+    "name": "png.png",
+    "w": 5760,
+    "h": 3840,
+    "alpha": true,
+    "kb": 4276
+   }
+  ]
+ },
+ {
+  "cat": "工作桌",
+  "subcat": "",
+  "folder": "XTB5401B",
+  "files": [
+   {
+    "name": "055a5b984a5298d188be1d9288e26f9f.png",
+    "w": 1966,
+    "h": 2174,
+    "alpha": true,
+    "kb": 2530
+   },
+   {
+    "name": "XTB5401B.png",
+    "w": 255,
+    "h": 415,
+    "alpha": false,
+    "kb": 54
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "铁板烧",
+  "folder": "GR21094B01",
+  "files": [
+   {
+    "name": "DSC042462.png",
+    "w": 4690,
+    "h": 3430,
+    "alpha": true,
+    "kb": 7915
+   },
+   {
+    "name": "GR21094B01.png",
+    "w": 251,
+    "h": 456,
+    "alpha": false,
+    "kb": 43
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "铁板烧",
+  "folder": "GR174B01",
+  "files": [
+   {
+    "name": "DSC04369.png",
+    "w": 4660,
+    "h": 2911,
+    "alpha": true,
+    "kb": 8132
+   },
+   {
+    "name": "GR174B01.png",
+    "w": 258,
+    "h": 447,
+    "alpha": false,
+    "kb": 42
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "铁板烧",
+  "folder": "GR21093B01",
+  "files": [
+   {
+    "name": "DSC042272.png",
+    "w": 3676,
+    "h": 3256,
+    "alpha": true,
+    "kb": 13168
+   },
+   {
+    "name": "GR21093B01.png",
+    "w": 248,
+    "h": 454,
+    "alpha": false,
+    "kb": 51
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "铁板烧",
+  "folder": "GR21013B03with LID",
+  "files": [
+   {
+    "name": "DSC042362.png",
+    "w": 3599,
+    "h": 3600,
+    "alpha": true,
+    "kb": 14125
+   },
+   {
+    "name": "GR21013B03with LID.png",
+    "w": 256,
+    "h": 478,
+    "alpha": false,
+    "kb": 54
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR073B01",
+  "files": [
+   {
+    "name": "DSC04263.png",
+    "w": 4000,
+    "h": 4000,
+    "alpha": true,
+    "kb": 6547
+   },
+   {
+    "name": "GR073B01.png",
+    "w": 272,
+    "h": 477,
+    "alpha": false,
+    "kb": 43
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR064B01",
+  "files": [
+   {
+    "name": "DSC04372.png",
+    "w": 3556,
+    "h": 3747,
+    "alpha": true,
+    "kb": 8647
+   },
+   {
+    "name": "GR064B01.png",
+    "w": 259,
+    "h": 462,
+    "alpha": false,
+    "kb": 51
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR225B01",
+  "files": [
+   {
+    "name": "DSC042705.png",
+    "w": 4377,
+    "h": 4356,
+    "alpha": true,
+    "kb": 10387
+   },
+   {
+    "name": "GR225B01.png",
+    "w": 258,
+    "h": 471,
+    "alpha": false,
+    "kb": 49
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR143B01",
+  "files": [
+   {
+    "name": "DSC04271.png",
+    "w": 4000,
+    "h": 4218,
+    "alpha": true,
+    "kb": 8728
+   },
+   {
+    "name": "GR143B01.png",
+    "w": 262,
+    "h": 460,
+    "alpha": false,
+    "kb": 50
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR104B01",
+  "files": [
+   {
+    "name": "DSC043732.png",
+    "w": 3525,
+    "h": 4188,
+    "alpha": true,
+    "kb": 6646
+   },
+   {
+    "name": "GR104B01.png",
+    "w": 276,
+    "h": 467,
+    "alpha": false,
+    "kb": 48
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "气炉",
+  "folder": "GR063B01",
+  "files": [
+   {
+    "name": "DSC043753.png",
+    "w": 3609,
+    "h": 3909,
+    "alpha": true,
+    "kb": 9166
+   },
+   {
+    "name": "GR063B01.png",
+    "w": 268,
+    "h": 485,
+    "alpha": false,
+    "kb": 47
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "颗粒炉",
+  "folder": "PG21012401",
+  "files": [
+   {
+    "name": "DSC04256.png",
+    "w": 3876,
+    "h": 4233,
+    "alpha": true,
+    "kb": 11609
+   },
+   {
+    "name": "PG21012401.png",
+    "w": 255,
+    "h": 437,
+    "alpha": false,
+    "kb": 47
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "颗粒炉",
+  "folder": "GP032201with folding legs",
+  "files": [
+   {
+    "name": "1.1248.png",
+    "w": 2214,
+    "h": 2235,
+    "alpha": true,
+    "kb": 2730
+   },
+   {
+    "name": "GP032201with folding legs.png",
+    "w": 261,
+    "h": 435,
+    "alpha": false,
+    "kb": 50
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "颗粒炉",
+  "folder": "GP032202with folding legs",
+  "files": [
+   {
+    "name": "1.13141.png",
+    "w": 2296,
+    "h": 2300,
+    "alpha": true,
+    "kb": 2027
+   },
+   {
+    "name": "GP032202with folding legs.png",
+    "w": 240,
+    "h": 436,
+    "alpha": false,
+    "kb": 47
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "颗粒炉",
+  "folder": "GP032203",
+  "files": [
+   {
+    "name": "1.1756.png",
+    "w": 4721,
+    "h": 4399,
+    "alpha": true,
+    "kb": 11985
+   },
+   {
+    "name": "GP032203.png",
+    "w": 246,
+    "h": 451,
+    "alpha": false,
+    "kb": 51
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "炭炉",
+  "folder": "CG012401",
+  "files": [
+   {
+    "name": "CG012401.png",
+    "w": 259,
+    "h": 432,
+    "alpha": false,
+    "kb": 47
+   },
+   {
+    "name": "DSC04254.png",
+    "w": 4172,
+    "h": 4079,
+    "alpha": true,
+    "kb": 8049
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "柴火炉",
+  "folder": "FP021901 19IN",
+  "files": [
+   {
+    "name": "FP021901 19IN.png",
+    "w": 254,
+    "h": 378,
+    "alpha": false,
+    "kb": 35
+   },
+   {
+    "name": "png.png",
+    "w": 6000,
+    "h": 4000,
+    "alpha": true,
+    "kb": 9261
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "柴火炉",
+  "folder": "FP100701-火盆（带鼓风机）",
+  "files": [
+   {
+    "name": "png.jpg",
+    "w": 1752,
+    "h": 1280,
+    "alpha": false,
+    "kb": 56
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 235,
+    "h": 108,
+    "alpha": false,
+    "kb": 3
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "柴火炉",
+  "folder": "FP100702-火盆",
+  "files": [
+   {
+    "name": "png.jpg",
+    "w": 1752,
+    "h": 1280,
+    "alpha": false,
+    "kb": 58
+   },
+   {
+    "name": "尺寸信息.png",
+    "w": 235,
+    "h": 108,
+    "alpha": false,
+    "kb": 3
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "桌面炉",
+  "folder": "GR052B01",
+  "files": [
+   {
+    "name": "DSC04285 - 副本.png",
+    "w": 5724,
+    "h": 4000,
+    "alpha": true,
+    "kb": 16199
+   },
+   {
+    "name": "GR052B01.png",
+    "w": 253,
+    "h": 463,
+    "alpha": false,
+    "kb": 45
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "桌面炉",
+  "folder": "GR202B02",
+  "files": [
+   {
+    "name": "DSC04377.png",
+    "w": 6000,
+    "h": 4000,
+    "alpha": true,
+    "kb": 10152
+   },
+   {
+    "name": "GR202B02.png",
+    "w": 253,
+    "h": 452,
+    "alpha": false,
+    "kb": 48
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "桌面炉",
+  "folder": "GR053B01",
+  "files": [
+   {
+    "name": "DSC04288.png",
+    "w": 6000,
+    "h": 4000,
+    "alpha": true,
+    "kb": 12817
+   },
+   {
+    "name": "GR053B01.png",
+    "w": 246,
+    "h": 453,
+    "alpha": false,
+    "kb": 47
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "桌面炉",
+  "folder": "FP011401",
+  "files": [
+   {
+    "name": "DSC04376.png",
+    "w": 6000,
+    "h": 4000,
+    "alpha": true,
+    "kb": 10560
+   },
+   {
+    "name": "FP011401.png",
+    "w": 257,
+    "h": 465,
+    "alpha": false,
+    "kb": 38
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "烟熏炉",
+  "folder": "EG0218001",
+  "files": [
+   {
+    "name": "EG0218001.jpg",
+    "w": 249,
+    "h": 436,
+    "alpha": false,
+    "kb": 21
+   },
+   {
+    "name": "参数.png",
+    "w": 714,
+    "h": 70,
+    "alpha": false,
+    "kb": 6
+   }
+  ]
+ },
+ {
+  "cat": "烧烤",
+  "subcat": "烟熏炉",
+  "folder": "EG0330001",
+  "files": [
+   {
+    "name": "EG0330001.jpg",
+    "w": 201,
+    "h": 323,
+    "alpha": false,
+    "kb": 12
+   },
+   {
+    "name": "参数.png",
+    "w": 708,
+    "h": 60,
+    "alpha": false,
+    "kb": 5
+   }
+  ]
+ }
+]

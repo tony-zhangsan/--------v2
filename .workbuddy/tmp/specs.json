@@ -1,0 +1,1001 @@
+[
+ {
+  "cat": "cabinets",
+  "slug": "xtb2704a-top-chest",
+  "spec": "assets/img/specs/cabinets/xtb2704a-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/1.XTB2704A Top chest/XTB2704A Top chest.png",
+  "same_as_product": false,
+  "size": "258x432",
+  "kb": 21
+ },
+ {
+  "cat": "cabinets",
+  "slug": "mac5602",
+  "spec": "assets/img/specs/cabinets/mac5602.webp",
+  "src": "1.工具柜/1.工具箱/10.MAC5602/MAC5602.png",
+  "same_as_product": false,
+  "size": "250x429",
+  "kb": 26
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtb6302",
+  "spec": "assets/img/specs/cabinets/xtb6302.webp",
+  "src": "1.工具柜/1.工具箱/11.XTB6302/XTB6302.png",
+  "same_as_product": false,
+  "size": "248x445",
+  "kb": 25
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtb4606-top-chest",
+  "spec": "assets/img/specs/cabinets/xtb4606-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/12.XTB4606 Top chest/XTB4606 Top chest.png",
+  "same_as_product": false,
+  "size": "239x430",
+  "kb": 22
+ },
+ {
+  "cat": "cabinets",
+  "slug": "tc421804ahmc-top-chest",
+  "spec": "assets/img/specs/cabinets/tc421804ahmc-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/13.TC421804AHMC Top chest/TC421804AHMC Top chest.png",
+  "same_as_product": false,
+  "size": "248x412",
+  "kb": 21
+ },
+ {
+  "cat": "cabinets",
+  "slug": "tc602608a-top-chest",
+  "spec": "assets/img/specs/cabinets/tc602608a-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/14.TC602608A Top chest/TC602608A Top chest.png",
+  "same_as_product": false,
+  "size": "255x416",
+  "kb": 20
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtb72602b-middle-cabinet",
+  "spec": "assets/img/specs/cabinets/xtb72602b-middle-cabinet.webp",
+  "src": "1.工具柜/1.工具箱/2.XTB72602B Middle cabinet/XTB72602B Middle cabinet.png",
+  "same_as_product": false,
+  "size": "247x421",
+  "kb": 22
+ },
+ {
+  "cat": "cabinets",
+  "slug": "tc421806a-top-chest",
+  "spec": "assets/img/specs/cabinets/tc421806a-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/3.TC421806A Top chest/TC421806A Top chest.png",
+  "same_as_product": false,
+  "size": "245x429",
+  "kb": 22
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtb75603a-top-chest",
+  "spec": "assets/img/specs/cabinets/xtb75603a-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/4.XTB75603A Top chest/XTB75603A Top chest.png",
+  "same_as_product": false,
+  "size": "240x418",
+  "kb": 24
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtb75607a-top-chest",
+  "spec": "assets/img/specs/cabinets/xtb75607a-top-chest.webp",
+  "src": "1.工具柜/1.工具箱/5.XTB75607A Top chest/XTB75607A Top chest.png",
+  "same_as_product": false,
+  "size": "248x417",
+  "kb": 25
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtc3",
+  "spec": "assets/img/specs/cabinets/xtc3.webp",
+  "src": "1.工具柜/1.工具箱/6.XTC3/XTC3.png",
+  "same_as_product": false,
+  "size": "242x426",
+  "kb": 17
+ },
+ {
+  "cat": "cabinets",
+  "slug": "xtc9",
+  "spec": "assets/img/specs/cabinets/xtc9.webp",
+  "src": "1.工具柜/1.工具箱/7.XTC9/XTC9.png",
+  "same_as_product": false,
+  "size": "251x415",
+  "kb": 30
+ },
+ {
+  "cat": "cabinets",
+  "slug": "mac3017",
+  "spec": "assets/img/specs/cabinets/mac3017.webp",
+  "src": "1.工具柜/1.工具箱/8.MAC3017/MAC3017.png",
+  "same_as_product": false,
+  "size": "257x431",
+  "kb": 19
+ },
+ {
+  "cat": "cabinets",
+  "slug": "mac6003",
+  "spec": "assets/img/specs/cabinets/mac6003.webp",
+  "src": "1.工具柜/1.工具箱/9.MAC6003/MAC6003.png",
+  "same_as_product": false,
+  "size": "256x417",
+  "kb": 26
+ },
+ {
+  "cat": "cabinets",
+  "slug": "garage-storage-cabinet-1",
+  "spec": "assets/img/specs/cabinets/garage-storage-cabinet-1.webp",
+  "src": "1.工具柜/2.组合柜/1.GARAGE SRORAGE CABINET 1/GARAGE SRORAGE CABINET 1.png",
+  "same_as_product": false,
+  "size": "248x398",
+  "kb": 21
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs281801wp-1-drawer-bottom-cabinet",
+  "spec": "assets/img/specs/cabinets/gs281801wp-1-drawer-bottom-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/10.GS281801WP 1 drawer bottom cabinet/GS281801WP 1 drawer bottom cabinet.png",
+  "same_as_product": false,
+  "size": "253x433",
+  "kb": 24
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs281832wp-bottom-cabinet",
+  "spec": "assets/img/specs/cabinets/gs281832wp-bottom-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/11.GS281832WP Bottom cabinet/GS281832WP Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "260x426",
+  "kb": 22
+ },
+ {
+  "cat": "cabinets",
+  "slug": "garage-storage-cabinet-3",
+  "spec": "assets/img/specs/cabinets/garage-storage-cabinet-3.webp",
+  "src": "1.工具柜/2.组合柜/12.GARAGE SRORAGE CABINET 3/GARAGE SRORAGE CABINET 3.png",
+  "same_as_product": true,
+  "size": "3840x2806",
+  "kb": 930
+ },
+ {
+  "cat": "cabinets",
+  "slug": "wall-cabinet-1",
+  "spec": "assets/img/specs/cabinets/wall-cabinet-1.webp",
+  "src": "1.工具柜/2.组合柜/13.新品 Wall cabinet 1/尺寸信息.png",
+  "same_as_product": false,
+  "size": "315x109",
+  "kb": 5
+ },
+ {
+  "cat": "cabinets",
+  "slug": "wall-cabinet-2",
+  "spec": "assets/img/specs/cabinets/wall-cabinet-2.webp",
+  "src": "1.工具柜/2.组合柜/14.新品 Wall cabinet 2/尺寸信息.png",
+  "same_as_product": false,
+  "size": "315x109",
+  "kb": 5
+ },
+ {
+  "cat": "cabinets",
+  "slug": "drawer-bottom-cabinet-1",
+  "spec": "assets/img/specs/cabinets/drawer-bottom-cabinet-1.webp",
+  "src": "1.工具柜/2.组合柜/15.新品 drawer bottom cabinet 1/尺寸信息.png",
+  "same_as_product": false,
+  "size": "313x147",
+  "kb": 6
+ },
+ {
+  "cat": "cabinets",
+  "slug": "drawer-bottom-cabinet-2",
+  "spec": "assets/img/specs/cabinets/drawer-bottom-cabinet-2.webp",
+  "src": "1.工具柜/2.组合柜/16.新品 drawer bottom cabinet 2/尺寸信息.png",
+  "same_as_product": false,
+  "size": "314x148",
+  "kb": 6
+ },
+ {
+  "cat": "cabinets",
+  "slug": "side-locker",
+  "spec": "assets/img/specs/cabinets/side-locker.webp",
+  "src": "1.工具柜/2.组合柜/17.新品 Side Locker/产品信息.png",
+  "same_as_product": false,
+  "size": "315x238",
+  "kb": 6
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs2401-wall-cabinet",
+  "spec": "assets/img/specs/cabinets/gs2401-wall-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/2.GS2401 Wall cabinet/GS2401 Wall cabinet.png",
+  "same_as_product": false,
+  "size": "251x396",
+  "kb": 18
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs2403b1-drawer-bottom-cabinet",
+  "spec": "assets/img/specs/cabinets/gs2403b1-drawer-bottom-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/3.GS2403B1 drawer bottom cabinet/GS2403B1 drawer bottom cabinet.png",
+  "same_as_product": false,
+  "size": "261x400",
+  "kb": 25
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs2402-bottom-cabinet",
+  "spec": "assets/img/specs/cabinets/gs2402-bottom-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/4.GS2402 Bottom cabinet/GS2402 Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "266x412",
+  "kb": 24
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs3002lr-side-locker",
+  "spec": "assets/img/specs/cabinets/gs3002lr-side-locker.webp",
+  "src": "1.工具柜/2.组合柜/5.GS3002LR Side Locker/GS3002LR Side Locker.png",
+  "same_as_product": false,
+  "size": "252x403",
+  "kb": 19
+ },
+ {
+  "cat": "cabinets",
+  "slug": "garage-storage-cabinet-2",
+  "spec": "assets/img/specs/cabinets/garage-storage-cabinet-2.webp",
+  "src": "1.工具柜/2.组合柜/6.GARAGE SRORAGE CABINET 2/GARAGE SRORAGE CABINET 2.png",
+  "same_as_product": false,
+  "size": "254x367",
+  "kb": 10
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs481870wp-side-locker",
+  "spec": "assets/img/specs/cabinets/gs481870wp-side-locker.webp",
+  "src": "1.工具柜/2.组合柜/7.GS481870WP Side Locker/GS481870WP Side Locker.png",
+  "same_as_product": false,
+  "size": "273x441",
+  "kb": 20
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs361870wp-side-locker",
+  "spec": "assets/img/specs/cabinets/gs361870wp-side-locker.webp",
+  "src": "1.工具柜/2.组合柜/8.GS361870WP Side Locker/GS361870WP Side Locker.png",
+  "same_as_product": false,
+  "size": "250x427",
+  "kb": 20
+ },
+ {
+  "cat": "cabinets",
+  "slug": "gs281228wp-wall-cabinet",
+  "spec": "assets/img/specs/cabinets/gs281228wp-wall-cabinet.webp",
+  "src": "1.工具柜/2.组合柜/9.GS281228WP Wall cabinet/GS281228WP Wall cabinet.png",
+  "same_as_product": false,
+  "size": "248x425",
+  "kb": 21
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb220",
+  "spec": "assets/img/specs/carts/xtb220.webp",
+  "src": "2.工具车/1.工具推车/1.XTB220/XTB220.png",
+  "same_as_product": false,
+  "size": "259x455",
+  "kb": 30
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb75612b-bottom-cabinet",
+  "spec": "assets/img/specs/carts/xtb75612b-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/10.XTB75612B Bottom cabinet/XTB75612B Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "264x447",
+  "kb": 30
+ },
+ {
+  "cat": "carts",
+  "slug": "ope704",
+  "spec": "assets/img/specs/carts/ope704.webp",
+  "src": "2.工具车/1.工具推车/11.OPE704/OPE704.png",
+  "same_as_product": false,
+  "size": "247x437",
+  "kb": 26
+ },
+ {
+  "cat": "carts",
+  "slug": "ope4205",
+  "spec": "assets/img/specs/carts/ope4205.webp",
+  "src": "2.工具车/1.工具推车/12.OPE4205/OPE4205.png",
+  "same_as_product": false,
+  "size": "247x431",
+  "kb": 22
+ },
+ {
+  "cat": "carts",
+  "slug": "ope5105",
+  "spec": "assets/img/specs/carts/ope5105.webp",
+  "src": "2.工具车/1.工具推车/13.OPE5105/OPE5105.png",
+  "same_as_product": false,
+  "size": "248x448",
+  "kb": 27
+ },
+ {
+  "cat": "carts",
+  "slug": "tc421809bhmc-bottom-cabinet",
+  "spec": "assets/img/specs/carts/tc421809bhmc-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/14.TC421809BHMC Bottom cabinet/TC421809BHMC Bottom cabniet.png",
+  "same_as_product": false,
+  "size": "290x466",
+  "kb": 23
+ },
+ {
+  "cat": "carts",
+  "slug": "fr5607b-bottom-cabinet",
+  "spec": "assets/img/specs/carts/fr5607b-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/15.FR5607B Bottom cabinet/FR5607B Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "266x435",
+  "kb": 33
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb6210b",
+  "spec": "assets/img/specs/carts/xtb6210b.webp",
+  "src": "2.工具车/1.工具推车/16.XTB6210B/XTB6210B.png",
+  "same_as_product": true,
+  "size": "285x446",
+  "kb": 33
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb4609bs",
+  "spec": "assets/img/specs/carts/xtb4609bs.webp",
+  "src": "2.工具车/1.工具推车/17.XTB4609BS/XTB4609BS.png",
+  "same_as_product": false,
+  "size": "262x458",
+  "kb": 26
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb6210bs",
+  "spec": "assets/img/specs/carts/xtb6210bs.webp",
+  "src": "2.工具车/1.工具推车/18.XTB6210BS/XTB6210BS.png",
+  "same_as_product": false,
+  "size": "263x427",
+  "kb": 30
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb6210c",
+  "spec": "assets/img/specs/carts/xtb6210c.webp",
+  "src": "2.工具车/1.工具推车/19.XTB6210C/XTB6210C.png",
+  "same_as_product": false,
+  "size": "249x426",
+  "kb": 20
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb405",
+  "spec": "assets/img/specs/carts/xtb405.webp",
+  "src": "2.工具车/1.工具推车/2.XTB405/XTB405.png",
+  "same_as_product": false,
+  "size": "258x423",
+  "kb": 24
+ },
+ {
+  "cat": "carts",
+  "slug": "tc292105",
+  "spec": "assets/img/specs/carts/tc292105.webp",
+  "src": "2.工具车/1.工具推车/20.TC292105/TC292105.png",
+  "same_as_product": false,
+  "size": "265x458",
+  "kb": 26
+ },
+ {
+  "cat": "carts",
+  "slug": "tc602610b-bottom-cabinet",
+  "spec": "assets/img/specs/carts/tc602610b-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/21.TC602610B Bottom cabinet/TC602610B Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "255x431",
+  "kb": 22
+ },
+ {
+  "cat": "carts",
+  "slug": "new-tool-trolley",
+  "spec": "assets/img/specs/carts/new-tool-trolley.webp",
+  "src": "2.工具车/1.工具推车/22.新品/尺寸信息.png",
+  "same_as_product": false,
+  "size": "240x68",
+  "kb": 4
+ },
+ {
+  "cat": "carts",
+  "slug": "mac2707b",
+  "spec": "assets/img/specs/carts/mac2707b.webp",
+  "src": "2.工具车/1.工具推车/3.MAC2707B/MAC2707B.png",
+  "same_as_product": false,
+  "size": "249x420",
+  "kb": 25
+ },
+ {
+  "cat": "carts",
+  "slug": "mac7006",
+  "spec": "assets/img/specs/carts/mac7006.webp",
+  "src": "2.工具车/1.工具推车/4.MAC7006/MAC7006.png",
+  "same_as_product": false,
+  "size": "251x419",
+  "kb": 21
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb26051b",
+  "spec": "assets/img/specs/carts/xtb26051b.webp",
+  "src": "2.工具车/1.工具推车/5.XTB26051B/XTB26051B.png",
+  "same_as_product": false,
+  "size": "254x424",
+  "kb": 29
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb72706c-bottom-cabinet",
+  "spec": "assets/img/specs/carts/xtb72706c-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/6.XTB72706C Bottom cabinet/XTB72706C Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "247x439",
+  "kb": 23
+ },
+ {
+  "cat": "carts",
+  "slug": "tc421806b-bottom-cabinet",
+  "spec": "assets/img/specs/carts/tc421806b-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/7.TC421806B Bottom cabinet/TC421806B Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "261x424",
+  "kb": 23
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb4209b-bottom-cabinet",
+  "spec": "assets/img/specs/carts/xtb4209b-bottom-cabinet.webp",
+  "src": "2.工具车/1.工具推车/8.XTB4209B Bottom cabinet/XTB4209B Bottom cabinet.png",
+  "same_as_product": false,
+  "size": "255x426",
+  "kb": 23
+ },
+ {
+  "cat": "carts",
+  "slug": "xtb4609",
+  "spec": "assets/img/specs/carts/xtb4609.webp",
+  "src": "2.工具车/1.工具推车/9.XTB4609/XTB4609.png",
+  "same_as_product": false,
+  "size": "257x426",
+  "kb": 22
+ },
+ {
+  "cat": "carts",
+  "slug": "ope900-welding-cart",
+  "spec": "assets/img/specs/carts/ope900-welding-cart.webp",
+  "src": "2.工具车/2.焊接车/1.OPE900 Welding cart/OPE900 Welding cart.png",
+  "same_as_product": false,
+  "size": "250x441",
+  "kb": 22
+ },
+ {
+  "cat": "carts",
+  "slug": "tc301",
+  "spec": "assets/img/specs/carts/tc301.webp",
+  "src": "2.工具车/3.手推车/1.TC301/TC301.png",
+  "same_as_product": false,
+  "size": "255x440",
+  "kb": 20
+ },
+ {
+  "cat": "carts",
+  "slug": "tc302",
+  "spec": "assets/img/specs/carts/tc302.webp",
+  "src": "2.工具车/3.手推车/2.TC302/TC302.png",
+  "same_as_product": false,
+  "size": "263x422",
+  "kb": 24
+ },
+ {
+  "cat": "carts",
+  "slug": "amz3031",
+  "spec": "assets/img/specs/carts/amz3031.webp",
+  "src": "2.工具车/3.手推车/3.AMZ3031/AMZ3031.png",
+  "same_as_product": false,
+  "size": "256x424",
+  "kb": 24
+ },
+ {
+  "cat": "carts",
+  "slug": "amz3032",
+  "spec": "assets/img/specs/carts/amz3032.webp",
+  "src": "2.工具车/3.手推车/4.AMZ3032/AMZ3032.png",
+  "same_as_product": false,
+  "size": "242x417",
+  "kb": 23
+ },
+ {
+  "cat": "carts",
+  "slug": "ope380",
+  "spec": "assets/img/specs/carts/ope380.webp",
+  "src": "2.工具车/3.手推车/5.OPE380/OPE380.png",
+  "same_as_product": false,
+  "size": "263x424",
+  "kb": 24
+ },
+ {
+  "cat": "carts",
+  "slug": "tc310",
+  "spec": "assets/img/specs/carts/tc310.webp",
+  "src": "2.工具车/3.手推车/6.TC310/TC310.png",
+  "same_as_product": false,
+  "size": "254x415",
+  "kb": 20
+ },
+ {
+  "cat": "carts",
+  "slug": "tc309",
+  "spec": "assets/img/specs/carts/tc309.webp",
+  "src": "2.工具车/3.手推车/7.TC309/TC309.png",
+  "same_as_product": false,
+  "size": "241x427",
+  "kb": 22
+ },
+ {
+  "cat": "carts",
+  "slug": "tc311703wal",
+  "spec": "assets/img/specs/carts/tc311703wal.webp",
+  "src": "2.工具车/3.手推车/8.TC311703WAL/TC311703WAL.png",
+  "same_as_product": false,
+  "size": "243x419",
+  "kb": 24
+ },
+ {
+  "cat": "stands",
+  "slug": "mss500",
+  "spec": "assets/img/specs/stands/mss500.webp",
+  "src": "3.支架/1.MSS500/MSS500.png",
+  "same_as_product": false,
+  "size": "244x428",
+  "kb": 20
+ },
+ {
+  "cat": "stands",
+  "slug": "sh106",
+  "spec": "assets/img/specs/stands/sh106.webp",
+  "src": "3.支架/10.SH106/SH106.png",
+  "same_as_product": true,
+  "size": "267x429",
+  "kb": 21
+ },
+ {
+  "cat": "stands",
+  "slug": "ac41c",
+  "spec": "assets/img/specs/stands/ac41c.webp",
+  "src": "3.支架/11.AC41C/AC41C.png",
+  "same_as_product": true,
+  "size": "252x447",
+  "kb": 20
+ },
+ {
+  "cat": "stands",
+  "slug": "ac42",
+  "spec": "assets/img/specs/stands/ac42.webp",
+  "src": "3.支架/12.AC42/AC42.png",
+  "same_as_product": false,
+  "size": "249x417",
+  "kb": 19
+ },
+ {
+  "cat": "stands",
+  "slug": "ac43",
+  "spec": "assets/img/specs/stands/ac43.webp",
+  "src": "3.支架/13.AC43/AC43.png",
+  "same_as_product": false,
+  "size": "253x421",
+  "kb": 19
+ },
+ {
+  "cat": "stands",
+  "slug": "sh4129",
+  "spec": "assets/img/specs/stands/sh4129.webp",
+  "src": "3.支架/14.SH4129/SH4129.png",
+  "same_as_product": false,
+  "size": "253x410",
+  "kb": 19
+ },
+ {
+  "cat": "stands",
+  "slug": "sh4026",
+  "spec": "assets/img/specs/stands/sh4026.webp",
+  "src": "3.支架/15.SH4026/SH4026.png",
+  "same_as_product": false,
+  "size": "266x469",
+  "kb": 19
+ },
+ {
+  "cat": "stands",
+  "slug": "mss502",
+  "spec": "assets/img/specs/stands/mss502.webp",
+  "src": "3.支架/2.MSS502/MSS502.png",
+  "same_as_product": false,
+  "size": "253x417",
+  "kb": 21
+ },
+ {
+  "cat": "stands",
+  "slug": "mss507",
+  "spec": "assets/img/specs/stands/mss507.webp",
+  "src": "3.支架/3.MSS507/MSS507.png",
+  "same_as_product": false,
+  "size": "250x430",
+  "kb": 20
+ },
+ {
+  "cat": "stands",
+  "slug": "mss508a",
+  "spec": "assets/img/specs/stands/mss508a.webp",
+  "src": "3.支架/4.MSS508A/MSS508A.png",
+  "same_as_product": false,
+  "size": "246x431",
+  "kb": 21
+ },
+ {
+  "cat": "stands",
+  "slug": "mss509",
+  "spec": "assets/img/specs/stands/mss509.webp",
+  "src": "3.支架/5.MSS509/MSS509.png",
+  "same_as_product": false,
+  "size": "244x411",
+  "kb": 22
+ },
+ {
+  "cat": "stands",
+  "slug": "mss250",
+  "spec": "assets/img/specs/stands/mss250.webp",
+  "src": "3.支架/6.MSS250/MSS250.png",
+  "same_as_product": false,
+  "size": "274x421",
+  "kb": 23
+ },
+ {
+  "cat": "stands",
+  "slug": "mss2400",
+  "spec": "assets/img/specs/stands/mss2400.webp",
+  "src": "3.支架/7.MSS2400/MSS2400.png",
+  "same_as_product": false,
+  "size": "252x416",
+  "kb": 20
+ },
+ {
+  "cat": "stands",
+  "slug": "mss510",
+  "spec": "assets/img/specs/stands/mss510.webp",
+  "src": "3.支架/8.MSS510/MSS510.png",
+  "same_as_product": false,
+  "size": "253x422",
+  "kb": 26
+ },
+ {
+  "cat": "stands",
+  "slug": "sh107-wood-bracket",
+  "spec": "assets/img/specs/stands/sh107-wood-bracket.webp",
+  "src": "3.支架/9.SH107 WOOD BARCKET/SH107 WOOD BARCKET.png",
+  "same_as_product": true,
+  "size": "271x425",
+  "kb": 14
+ },
+ {
+  "cat": "benches",
+  "slug": "wb600",
+  "spec": "assets/img/specs/benches/wb600.webp",
+  "src": "4.工作桌/1.WB600/WB600.png",
+  "same_as_product": false,
+  "size": "264x445",
+  "kb": 19
+ },
+ {
+  "cat": "benches",
+  "slug": "wb452401wp",
+  "spec": "assets/img/specs/benches/wb452401wp.webp",
+  "src": "4.工作桌/10.WB452401WP/WB452401WP.png",
+  "same_as_product": false,
+  "size": "249x437",
+  "kb": 29
+ },
+ {
+  "cat": "benches",
+  "slug": "wb603",
+  "spec": "assets/img/specs/benches/wb603.webp",
+  "src": "4.工作桌/2.WB603/WB603.png",
+  "same_as_product": false,
+  "size": "257x448",
+  "kb": 20
+ },
+ {
+  "cat": "benches",
+  "slug": "wb602c",
+  "spec": "assets/img/specs/benches/wb602c.webp",
+  "src": "4.工作桌/3.WB602C/WB602C.png",
+  "same_as_product": false,
+  "size": "261x451",
+  "kb": 23
+ },
+ {
+  "cat": "benches",
+  "slug": "ct-4ft",
+  "spec": "assets/img/specs/benches/ct-4ft.webp",
+  "src": "4.工作桌/4.CT-4FT/CT-4FT.png",
+  "same_as_product": false,
+  "size": "261x436",
+  "kb": 19
+ },
+ {
+  "cat": "benches",
+  "slug": "ct-4ft-a",
+  "spec": "assets/img/specs/benches/ct-4ft-a.webp",
+  "src": "4.工作桌/5.CT-4FT-A/CT-4FT-A.png",
+  "same_as_product": false,
+  "size": "260x443",
+  "kb": 21
+ },
+ {
+  "cat": "benches",
+  "slug": "ct-4ft-c",
+  "spec": "assets/img/specs/benches/ct-4ft-c.webp",
+  "src": "4.工作桌/6.CT-4FT-C/CT-4FT-C.png",
+  "same_as_product": false,
+  "size": "261x453",
+  "kb": 18
+ },
+ {
+  "cat": "benches",
+  "slug": "wb6024",
+  "spec": "assets/img/specs/benches/wb6024.webp",
+  "src": "4.工作桌/7.WB6024/WB6024.png",
+  "same_as_product": false,
+  "size": "251x424",
+  "kb": 17
+ },
+ {
+  "cat": "benches",
+  "slug": "wb4824",
+  "spec": "assets/img/specs/benches/wb4824.webp",
+  "src": "4.工作桌/8.WB4824/WB4824.png",
+  "same_as_product": false,
+  "size": "259x427",
+  "kb": 18
+ },
+ {
+  "cat": "benches",
+  "slug": "xtb5401b",
+  "spec": "assets/img/specs/benches/xtb5401b.webp",
+  "src": "4.工作桌/9.XTB5401B/XTB5401B.png",
+  "same_as_product": false,
+  "size": "255x415",
+  "kb": 28
+ },
+ {
+  "cat": "grills",
+  "slug": "gr21094b01",
+  "spec": "assets/img/specs/grills/gr21094b01.webp",
+  "src": "5.烧烤/1.铁板烧/1.GR21094B01/GR21094B01.png",
+  "same_as_product": false,
+  "size": "251x456",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gr174b01",
+  "spec": "assets/img/specs/grills/gr174b01.webp",
+  "src": "5.烧烤/1.铁板烧/2.GR174B01/GR174B01.png",
+  "same_as_product": false,
+  "size": "258x447",
+  "kb": 31
+ },
+ {
+  "cat": "grills",
+  "slug": "gr21093b01",
+  "spec": "assets/img/specs/grills/gr21093b01.webp",
+  "src": "5.烧烤/1.铁板烧/3.GR21093B01/GR21093B01.png",
+  "same_as_product": false,
+  "size": "248x454",
+  "kb": 33
+ },
+ {
+  "cat": "grills",
+  "slug": "gr21013b03-with-lid",
+  "spec": "assets/img/specs/grills/gr21013b03-with-lid.webp",
+  "src": "5.烧烤/1.铁板烧/4.GR21013B03with LID/GR21013B03with LID.png",
+  "same_as_product": false,
+  "size": "256x478",
+  "kb": 35
+ },
+ {
+  "cat": "grills",
+  "slug": "gr073b01",
+  "spec": "assets/img/specs/grills/gr073b01.webp",
+  "src": "5.烧烤/2.气炉/1.GR073B01/GR073B01.png",
+  "same_as_product": false,
+  "size": "272x477",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gr064b01",
+  "spec": "assets/img/specs/grills/gr064b01.webp",
+  "src": "5.烧烤/2.气炉/2.GR064B01/GR064B01.png",
+  "same_as_product": false,
+  "size": "259x462",
+  "kb": 28
+ },
+ {
+  "cat": "grills",
+  "slug": "gr225b01",
+  "spec": "assets/img/specs/grills/gr225b01.webp",
+  "src": "5.烧烤/2.气炉/3.GR225B01/GR225B01.png",
+  "same_as_product": false,
+  "size": "258x471",
+  "kb": 29
+ },
+ {
+  "cat": "grills",
+  "slug": "gr143b01",
+  "spec": "assets/img/specs/grills/gr143b01.webp",
+  "src": "5.烧烤/2.气炉/4.GR143B01/GR143B01.png",
+  "same_as_product": false,
+  "size": "262x460",
+  "kb": 29
+ },
+ {
+  "cat": "grills",
+  "slug": "gr104b01",
+  "spec": "assets/img/specs/grills/gr104b01.webp",
+  "src": "5.烧烤/2.气炉/5.GR104B01/GR104B01.png",
+  "same_as_product": false,
+  "size": "276x467",
+  "kb": 28
+ },
+ {
+  "cat": "grills",
+  "slug": "gr063b01",
+  "spec": "assets/img/specs/grills/gr063b01.webp",
+  "src": "5.烧烤/2.气炉/6.GR063B01/GR063B01.png",
+  "same_as_product": false,
+  "size": "268x485",
+  "kb": 27
+ },
+ {
+  "cat": "grills",
+  "slug": "pg21012401",
+  "spec": "assets/img/specs/grills/pg21012401.webp",
+  "src": "5.烧烤/3.颗粒炉/1.PG21012401/PG21012401.png",
+  "same_as_product": false,
+  "size": "255x437",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gp032201-with-folding-legs",
+  "spec": "assets/img/specs/grills/gp032201-with-folding-legs.webp",
+  "src": "5.烧烤/3.颗粒炉/2.GP032201with folding legs/GP032201with folding legs.png",
+  "same_as_product": false,
+  "size": "261x435",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gp032202-with-folding-legs",
+  "spec": "assets/img/specs/grills/gp032202-with-folding-legs.webp",
+  "src": "5.烧烤/3.颗粒炉/3.GP032202with folding legs/GP032202with folding legs.png",
+  "same_as_product": false,
+  "size": "240x436",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gp032203",
+  "spec": "assets/img/specs/grills/gp032203.webp",
+  "src": "5.烧烤/3.颗粒炉/4.GP032203/GP032203.png",
+  "same_as_product": false,
+  "size": "246x451",
+  "kb": 29
+ },
+ {
+  "cat": "grills",
+  "slug": "cg012401",
+  "spec": "assets/img/specs/grills/cg012401.webp",
+  "src": "5.烧烤/4.炭炉/1.CG012401/CG012401.png",
+  "same_as_product": false,
+  "size": "259x432",
+  "kb": 29
+ },
+ {
+  "cat": "grills",
+  "slug": "fp021901-19in",
+  "spec": "assets/img/specs/grills/fp021901-19in.webp",
+  "src": "5.烧烤/5.柴火炉/1.FP021901 19IN/FP021901 19IN.png",
+  "same_as_product": false,
+  "size": "254x378",
+  "kb": 19
+ },
+ {
+  "cat": "grills",
+  "slug": "fp100701",
+  "spec": "assets/img/specs/grills/fp100701.webp",
+  "src": "5.烧烤/5.柴火炉/2.FP100701-火盆（带鼓风机）/尺寸信息.png",
+  "same_as_product": false,
+  "size": "235x108",
+  "kb": 8
+ },
+ {
+  "cat": "grills",
+  "slug": "fp100702",
+  "spec": "assets/img/specs/grills/fp100702.webp",
+  "src": "5.烧烤/5.柴火炉/3.FP100702-火盆/尺寸信息.png",
+  "same_as_product": false,
+  "size": "235x108",
+  "kb": 8
+ },
+ {
+  "cat": "grills",
+  "slug": "gr052b01",
+  "spec": "assets/img/specs/grills/gr052b01.webp",
+  "src": "5.烧烤/6.桌面炉/1.GR052B01/GR052B01.png",
+  "same_as_product": false,
+  "size": "253x463",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gr202b02",
+  "spec": "assets/img/specs/grills/gr202b02.webp",
+  "src": "5.烧烤/6.桌面炉/2.GR202B02/GR202B02.png",
+  "same_as_product": false,
+  "size": "253x452",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "gr053b01",
+  "spec": "assets/img/specs/grills/gr053b01.webp",
+  "src": "5.烧烤/6.桌面炉/3.GR053B01/GR053B01.png",
+  "same_as_product": false,
+  "size": "246x453",
+  "kb": 30
+ },
+ {
+  "cat": "grills",
+  "slug": "fp011401",
+  "spec": "assets/img/specs/grills/fp011401.webp",
+  "src": "5.烧烤/6.桌面炉/4.FP011401/FP011401.png",
+  "same_as_product": false,
+  "size": "257x465",
+  "kb": 26
+ },
+ {
+  "cat": "grills",
+  "slug": "eg0218001",
+  "spec": "assets/img/specs/grills/eg0218001.webp",
+  "src": "5.烧烤/7.烟熏炉/1.EG0218001/参数.png",
+  "same_as_product": false,
+  "size": "714x70",
+  "kb": 7
+ },
+ {
+  "cat": "grills",
+  "slug": "eg0330001",
+  "spec": "assets/img/specs/grills/eg0330001.webp",
+  "src": "5.烧烤/7.烟熏炉/2.EG0330001/参数.png",
+  "same_as_product": false,
+  "size": "708x60",
+  "kb": 6
+ }
+]

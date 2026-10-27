@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-label="Cambodia">
+  <rect width="300" height="200" fill="#032ea1"/>
+  <rect y="50" width="300" height="100" fill="#e00025"/>
+  <g fill="#ffffff">
+    <rect x="103" y="112" width="94" height="6"/>
+    <rect x="112" y="118" width="76" height="6"/>
+    <path d="M150 58 l15 46 h-30 z"/>
+    <path d="M122 74 l11 36 h-22 z"/>
+    <path d="M178 74 l11 36 h-22 z"/>
+    <rect x="146" y="50" width="8" height="10"/>
+  </g>
+</svg>

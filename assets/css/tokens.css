@@ -1,0 +1,207 @@
+/* ============================================================
+   tokens.css — 新大地五金官网 v2
+   方向：corporate-stable（工业稳重）
+   品牌色沿用：深蓝 #1e3a5f + 橙 #f4731d
+   ------------------------------------------------------------
+   三层结构，固定：1) primitive 2) semantic 3) component
+   组件只允许引用第 2、3 层。
+
+   ⚠️ 橙色使用约束（对比度实测，勿违反）：
+     #F4731D 白底 2.87:1 / 白字其上 2.87:1 —— 均不达 AA
+     → 只可用于：色条、分隔线、图标填充、大面积图形、hover 边线
+     → 小字橙文用 --cta-ink (#C2560C, 4.53:1 ✅)
+     → 大号数字用 --cta-large (#E8641A, 3.35:1，≥24px 粗体 ✅)
+   ============================================================ */
+
+:root {
+  /* ---------- Layer 1：原始色阶 ------------------------------------ */
+  --navy-900: #12253C;
+  --navy-800: #1A3352;
+  --navy-700: #1E3A5F;   /* 品牌主色 */
+  --navy-600: #2A4E7A;
+  --navy-500: #3B6494;
+  --navy-200: #C9D6E4;
+  --navy-100: #E6EDF4;
+  --navy-50:  #F4F7FA;
+
+  --orange-700: #A8460A;
+  --orange-600: #C2560C;
+  --orange-500: #E8641A;
+  --orange-400: #F4731D;  /* 品牌辅色 */
+  --orange-100: #FDEBE0;
+
+  --gray-0:   #FFFFFF;
+  --gray-50:  #F7F9FB;
+  --gray-100: #EFF2F6;
+  --gray-200: #E1E7EE;
+  --gray-300: #CBD5E0;
+  --gray-400: #98A6B6;
+  --gray-500: #6B7C90;
+
+  --green-600:  #127A4B;
+  --amber-600:  #B26B00;
+  --red-600:    #B3261E;
+
+  /* 尺寸基元（4px 基准） */
+  --size-1: 4px;   --size-2: 8px;   --size-3: 12px;  --size-4: 16px;
+  --size-5: 20px;  --size-6: 24px;  --size-8: 32px;  --size-10: 40px;
+  --size-12: 48px; --size-16: 64px; --size-20: 80px; --size-24: 96px;
+  --size-32: 128px;
+
+  /* ---------- Layer 2：语义层 -------------------------------------- */
+  /* 表面 */
+  --bg:          var(--gray-0);
+  --bg-subtle:   var(--navy-50);
+  --surface:     var(--gray-0);
+  --surface-2:   var(--gray-50);
+  --surface-inverse: var(--navy-900);
+  --overlay:     rgba(18, 37, 60, 0.52);
+
+  /* 边框 */
+  --border:        #DDE4EC;
+  --border-strong: #C3CFDC;
+  --border-inverse: rgba(255, 255, 255, 0.16);
+
+  /* 文字 */
+  --text:         #12253C;
+  --text-muted:   #4B5D73;
+  --text-faint:   #66788D;
+  --text-inverse: #FFFFFF;
+  --text-inverse-muted: #B4C2D2;
+
+  /* 主色（深蓝，按钮/链接） */
+  --accent:          var(--navy-700);
+  --accent-hover:    var(--navy-900);
+  --accent-subtle:   var(--navy-100);
+
+  /* 辅色（橙，仅图形与大字） */
+  --cta:          var(--orange-400);
+  --cta-large:    var(--orange-500);   /* 字号 ≥24px 且粗体时才可用于文字 */
+  --cta-ink:      var(--orange-600);   /* 小字橙文，AA 达标 */
+  --cta-strong:   var(--orange-700);
+  --cta-subtle:   var(--orange-100);
+
+  /* 状态 */
+  --success: var(--green-600);  --success-subtle: #E7F4ED;
+  --warn:    var(--amber-600);  --warn-subtle:    #FBF0DC;
+  --danger:  var(--red-600);    --danger-subtle:  #FAE7E6;
+
+  --focus-ring: var(--navy-500);
+
+  /* ---------- 间距 ------------------------------------------------ */
+  --space-1: var(--size-1);   --space-2: var(--size-2);
+  --space-3: var(--size-3);   --space-4: var(--size-4);
+  --space-5: var(--size-5);   --space-6: var(--size-6);
+  --space-8: var(--size-8);   --space-10: var(--size-10);
+  --space-12: var(--size-12); --space-16: var(--size-16);
+  --space-20: var(--size-20); --space-24: var(--size-24);
+
+  /* 段落节奏 */
+  --section-y:       clamp(3.5rem, 6vw, 6rem);
+  --section-y-tight: clamp(2.5rem, 4vw, 3.5rem);
+  --container-max:   1200px;
+  --container-pad:   24px;
+  --measure:         66ch;
+
+  /* ---------- 圆角 ------------------------------------------------ */
+  /* corporate-stable：克制，大圆角会显得轻浮 */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-full: 9999px;
+
+  /* ---------- 阴影 ------------------------------------------------ */
+  --shadow-sm: 0 1px 2px rgba(18, 37, 60, 0.06);
+  --shadow-md: 0 4px 14px rgba(18, 37, 60, 0.08);
+  --shadow-lg: 0 14px 40px rgba(18, 37, 60, 0.12);
+
+  /* ---------- 排版 ------------------------------------------------ */
+  /* 纯系统字体栈：不依赖 Google Fonts，国内访问不受影响 */
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+                  "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+                  "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+  --font-mono:    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+                  "Liberation Mono", monospace;
+
+  /* 字号：hero 上限 48px，符合 corporate-stable 的克制基准 */
+  --text-hero: clamp(2rem, 1.1rem + 2.4vw, 3rem);
+  --text-h1:   clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  --text-h2:   clamp(1.375rem, 1.1rem + 0.9vw, 1.875rem);
+  --text-h3:   clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-h4:   1rem;
+  --text-lg:   1.0625rem;
+  --text-body: 0.9375rem;   /* 15px */
+  --text-sm:   0.8125rem;   /* 13px */
+  --text-xs:   0.75rem;     /* 12px */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.15;
+  --leading-snug:    1.32;
+  --leading-normal:  1.65;
+  --leading-relaxed: 1.75;
+
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.012em;
+  --tracking-normal:  0;
+  --tracking-label:   0.14em;
+
+  /* ---------- 动效 ------------------------------------------------ */
+  /* corporate-stable：动效近乎为零，只保留颜色过渡 */
+  --dur-fast:  120ms;
+  --dur-base:  180ms;
+  --dur-slow:  280ms;
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---------- 层级 ------------------------------------------------ */
+  --z-base: 0; --z-sticky: 200; --z-drawer: 300; --z-modal: 400;
+
+  /* ---------- Layer 3：组件 --------------------------------------- */
+  --card-bg:      var(--surface);
+  --card-border:  1px solid var(--border);
+  --card-padding: var(--space-6);
+  --card-radius:  var(--radius-lg);
+
+  --btn-radius:  var(--radius-sm);
+  --btn-pad-y:   0.8125rem;
+  --btn-pad-x:   1.5rem;
+  --btn-font:    var(--text-sm);
+  --btn-weight:  var(--weight-semibold);
+  --btn-dur:     var(--dur-fast);
+
+  --input-bg:     var(--surface);
+  --input-border: 1px solid var(--border-strong);
+  --input-radius: var(--radius-sm);
+  --input-pad:    0.6875rem 0.875rem;
+
+  --nav-height:     64px;
+  --topbar-height:  36px;
+}
+
+/* 反色区块（深蓝底）：用于 CTA 条、页脚。
+   只覆盖语义层，组件无需改动。 */
+.on-dark {
+  --bg:          var(--navy-900);
+  --bg-subtle:   var(--navy-800);
+  --surface:     var(--navy-800);
+  --surface-2:   var(--navy-700);
+  --border:        rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.28);
+  --text:         #FFFFFF;
+  --text-muted:   #B4C2D2;
+  --text-faint:   #93A5B9;
+  --accent:        #FFFFFF;
+  --accent-hover:  #FFFFFF;
+  --accent-subtle: rgba(255, 255, 255, 0.10);
+  --cta-ink:       var(--orange-500);
+  --focus-ring:    var(--orange-500);
+  background: var(--bg);
+  color: var(--text);
+}

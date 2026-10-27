@@ -1,0 +1,351 @@
+/* ============================================================
+   about.css — 关于我们：深色双屏（参考稿 8.网页布局的流程/3.png）
+   两屏全屏，上下滑动切换；第一屏苏州、第二屏柬埔寨。
+   只在本页引用，不改动其他页面。
+   ============================================================ */
+
+html { scroll-snap-type: y mandatory; }
+
+.page-about { background: var(--navy-900); color: #fff; }
+
+/* ---------- 头部：固定 + 深色（同联系页语言） ---------- */
+.page-about .site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  background: var(--navy-900);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-about .nav__link { color: rgba(255, 255, 255, 0.76); }
+.page-about .nav__link:hover,
+.page-about .nav__link[aria-current="page"] { color: #fff; }
+
+
+.page-about .btn--primary {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy-900);
+}
+.page-about .btn--primary:hover {
+  background: var(--navy-100);
+  border-color: var(--navy-100);
+  color: var(--navy-900);
+}
+
+.page-about .nav-toggle { border-color: rgba(255, 255, 255, 0.4); }
+.page-about .nav-toggle span { background: #fff; }
+
+/* ---------- 屏幕 ---------- */
+.about-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(var(--nav-height) + 52px) 0 64px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background:
+    radial-gradient(900px 520px at 76% 14%, rgba(59, 100, 148, 0.26), transparent 62%),
+    radial-gradient(760px 460px at 10% 90%, rgba(244, 115, 29, 0.08), transparent 62%),
+    var(--navy-900);
+}
+
+.about-slide__inner {
+  width: min(100% - (var(--container-pad) * 2), var(--container-max));
+  margin-inline: auto;
+}
+
+/* ---------- 大标题 ---------- */
+.about-title {
+  text-align: center;
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.75rem);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: clamp(2rem, 4.6vh, 3.5rem);
+}
+
+/* ---------- 两栏 ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
+  gap: clamp(2rem, 3.6vw, 3.5rem);
+  align-items: center;
+}
+
+.about-slide--flip .about-grid {
+  grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+}
+.about-slide--flip .about-figure { order: -1; }
+
+/* ---------- 文案 ---------- */
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about-flag {
+  width: 26px;
+  height: 17px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.about-para {
+  font-size: var(--text-sm);
+  line-height: 1.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+.about-para + .about-para { margin-top: 0.85rem; }
+
+/* ---------- 四个指标 ---------- */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: clamp(1.75rem, 3.6vh, 2.75rem);
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  text-align: center;
+}
+
+.about-stat__mark {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-stat__mark svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-stat__num {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.01em;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.about-stat__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.55;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- 图片：圆角 + 立体投影（客户明确要求） ---------- */
+.about-figure {
+  position: relative;
+  margin: 0;
+  height: clamp(280px, 52vh, 480px);
+  border-radius: 14px;
+  isolation: isolate;          /* 让贴地投影的负 z-index 留在本层 */
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.38),
+    0 20px 34px -10px rgba(0, 0, 0, 0.6),
+    0 44px 64px -28px rgba(0, 0, 0, 0.72),
+    0 0 80px -26px rgba(84, 132, 190, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+.about-figure img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* 贴地投影：图片下方一片椭圆软影，制造"离地悬浮" */
+.about-figure::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 3%;
+  right: 3%;
+  bottom: -48px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.66) 30%,
+    rgba(0, 0, 0, 0.28) 58%,
+    rgba(0, 0, 0, 0) 84%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.about-figure::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.14) 0,
+    rgba(255, 255, 255, 0) 16%,
+    rgba(0, 0, 0, 0) 68%,
+    rgba(0, 0, 0, 0.30) 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+/* ---------- 右侧进度点 ---------- */
+.about-dots {
+  position: fixed;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  transition: background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.about-dots button:hover { background: rgba(255, 255, 255, 0.4); }
+.about-dots button.is-active {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- 下滑提示 ---------- */
+.about-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+.about-hint span {
+  display: block;
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72));
+  animation: aboutHint 2.2s ease-in-out infinite;
+}
+@keyframes aboutHint {
+  0%, 100% { opacity: 0.35; transform: translateY(-4px); }
+  50% { opacity: 1; transform: translateY(2px); }
+}
+
+/* ---------- 中文：取消全大写 ---------- */
+html[lang="zh-CN"] .about-para {
+  text-transform: none;
+  font-size: var(--text-body);
+  line-height: 2;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.75);
+}
+html[lang="zh-CN"] .about-title { letter-spacing: 0.26em; text-indent: 0.26em; }
+html[lang="zh-CN"] .about-eyebrow { letter-spacing: 0.2em; }
+html[lang="zh-CN"] .about-stat__label { font-family: var(--font-body); letter-spacing: 0.04em; font-size: 11px; }
+
+/* ---------- 矮屏：压缩纵向节奏，保证一屏放得下 ---------- */
+@media (min-width: 901px) and (max-height: 800px) {
+  .about-slide { padding: calc(var(--nav-height) + 36px) 0 52px; }
+  .about-title { font-size: 1.9rem; margin-bottom: 1.5rem; }
+  .about-para { font-size: var(--text-xs); line-height: 1.8; }
+  .about-para + .about-para { margin-top: 0.6rem; }
+  .about-figure { height: clamp(240px, 46vh, 400px); }
+  .about-stats { margin-top: 1.5rem; }
+  .about-stat__mark { height: 30px; }
+  .about-stat__mark svg { width: 26px; height: 26px; }
+  .about-stat__num { font-size: 0.9375rem; }
+}
+
+/* ---------- 平板 / 手机：取消吸附，单列自然滚动 ---------- */
+@media (max-width: 900px) {
+  html { scroll-snap-type: none; }
+  .about-slide {
+    min-height: 0;
+    padding: calc(var(--nav-height) + 40px) 0 56px;
+  }
+  .about-grid,
+  .about-slide--flip .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+  .about-slide--flip .about-figure { order: 0; }
+  .about-figure { height: auto; border-radius: 12px; }
+  .about-figure::before { left: -4%; right: -4%; bottom: -40px; height: 34px; filter: blur(9px); }
+  .about-figure img { aspect-ratio: 16 / 11; height: auto; }
+  .about-figure::after { border-radius: 12px; }
+  .about-dots,
+  .about-hint { display: none; }
+  .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-3); }
+}
+
+@media (max-width: 780px) {
+  /* 深色页的移动端抽屉 */
+  .page-about .nav {
+    background: var(--navy-900);
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+  .page-about .nav__link {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.82);
+  }
+  .page-about .nav__link[aria-current="page"] { color: #fff; }
+}
+
+@media (max-width: 560px) {
+  .about-slide { padding: calc(var(--nav-height) + 28px) 0 44px; }
+  .about-title { font-size: 1.5rem; letter-spacing: 0.24em; text-indent: 0.24em; margin-bottom: 1.5rem; }
+  .about-para { font-size: var(--text-xs); }
+  html[lang="zh-CN"] .about-para { font-size: var(--text-sm); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .about-hint span { animation: none; }
+}
