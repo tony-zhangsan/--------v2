@@ -21,7 +21,7 @@
 
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/base.css">
-<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site.css?v=3">
 
 <script type="application/ld+json">
 {
@@ -30,7 +30,7 @@
   "@id": "https://www.xindadi.com/#organization",
   "name": "苏州市新大地五金制品有限公司",
   "alternateName": "Suzhou Xindadi Hardware Products Co., Ltd.",
-  "description": "专业生产工具柜、工具车、支架、工作台、烧烤炉及其他钣金制品，成立于 1999 年，通过 ISO 9001 认证。",
+  "description": "专业生产工具柜、工具车、支架、工作台、烧烤炉及其他，成立于 1999 年，通过 ISO 9001 认证。",
   "url": "https://www.xindadi.com/zh/contact.html",
   "telephone": "+86-512-6548-8105",
   "faxNumber": "+86-512-6548-4169",
@@ -186,8 +186,7 @@
         </p>
       </div>
 
-      <form class="form-grid contact-form" data-validate novalidate action=""
-            data-pending-message="表单后端尚未接入，请先发送邮件至 info@xindadi.com。">
+      <form class="form-grid contact-form" data-validate data-cloud-form data-lang="zh" novalidate>
         <div class="field">
           <label for="f-name">姓名 <span class="req" aria-hidden="true">*</span></label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -220,7 +219,7 @@
             <option value="cabinets">工具柜 · TC 系列</option>
             <option value="trolleys">工具车 · MT 系列</option>
             <option value="workbenches">工作台 · WB 系列</option>
-            <option value="storage">其他钣金制品 · WC 系列</option>
+            <option value="storage">其他 · WC 系列</option>
             <option value="racks">支架 · TR 系列</option>
             <option value="grills">烧烤炉 · GG 系列</option>
             <option value="oem">OEM / 来图定制</option>
@@ -268,10 +267,11 @@
         <h4>产品中心</h4>
         <a href="category.html?cat=cabinets">工具柜</a>
         <a href="category.html?cat=carts">工具车</a>
-        <a href="category.html?cat=stands">支架</a>
+        <a href="category.html?cat=combination">组合柜</a>
         <a href="category.html?cat=benches">工作台</a>
+        <a href="category.html?cat=stands">支架</a>
         <a href="category.html?cat=grills">烧烤炉</a>
-        <a href="category.html?cat=others">其他钣金制品</a>
+        <a href="category.html?cat=others">其他</a>
       </div>
 
       <div class="footer-col">
@@ -295,6 +295,8 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
 <script src="../assets/js/site.js"></script>
+<script src="../assets/js/cloud-inquiry.js"></script>
 </body>
 </html>

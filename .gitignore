@@ -1,0 +1,21 @@
+# 预览截图（本地临时产物）
+.preview/
+
+# 回滚备份（本地临时产物）
+.workbuddy/backup/
+
+# .workbuddy/tmp/ 下的临时文件要排除，
+# 但脚本（*.py）与数据（*.json）是重建页面的依据，保留在版本库里
+.workbuddy/tmp/*.png
+.workbuddy/tmp/*.jpg
+.workbuddy/tmp/*.jpeg
+.workbuddy/tmp/*.webp
+.workbuddy/tmp/*.log
+.workbuddy/tmp/_bak_*
+.workbuddy/tmp/_trash/
+
+# 平台标记文件与本地连接配置
+*.genie
+.workbuddy/applications.yaml
+
+.DS_Store

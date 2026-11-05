@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>新大地五金 | Xindadi Hardware</title>
-<meta name="description" content="苏州市新大地五金制品有限公司 — 专业工具储物与户外烤炉制造商。Suzhou Xindadi Hardware Products Co., Ltd.">
-<link rel="canonical" href="https://www.xindadi.com/zh/">
-<link rel="alternate" hreflang="zh-CN" href="https://www.xindadi.com/zh/">
+<title>Xindadi Hardware | Tool Cabinet &amp; Outdoor Grill Manufacturer in Suzhou, China</title>
+<meta name="description" content="Suzhou Xindadi Hardware Products Co., Ltd. — manufacturer of tool storage and outdoor grills since 1999. 95% of output exported to Europe and North America.">
+<link rel="canonical" href="https://www.xindadi.com/en/">
 <link rel="alternate" hreflang="en" href="https://www.xindadi.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://www.xindadi.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.xindadi.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://www.xindadi.com/en/">
 <meta name="robots" content="noindex, follow">
+
+<!-- 入站默认进入英文站：JS 立即跳转，meta refresh 作为无 JS 时的兜底 -->
+<meta http-equiv="refresh" content="0; url=en/">
+<script>location.replace('en/');</script>
+
 <style>
   :root { color-scheme: light; }
   body {
@@ -18,7 +23,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
                  "Microsoft YaHei", sans-serif;
   }
-  .box { text-align: center; max-width: 420px; }
+  .box { text-align: center; max-width: 440px; }
   .mark {
     width: 48px; height: 48px; margin: 0 auto 20px; display: grid; place-items: center;
     background: #1E3A5F; color: #fff; font-size: 22px; font-weight: 700; border-radius: 3px;
@@ -39,20 +44,12 @@
 <body>
   <div class="box">
     <div class="mark" aria-hidden="true">X</div>
-    <h1>新大地五金 · Xindadi Hardware</h1>
-    <p>Professional tool storage &amp; outdoor grill manufacturer since 1999.</p>
+    <h1>Xindadi Hardware</h1>
+    <p>Professional tool storage &amp; outdoor grill manufacturer since 1999.<br>Suzhou, China</p>
     <div class="links">
-      <a class="primary" href="zh/index.html" hreflang="zh-CN">中文站</a>
-      <a href="en/index.html" hreflang="en">English</a>
+      <a class="primary" href="en/" hreflang="en">English</a>
+      <a href="zh/" hreflang="zh-CN" lang="zh-CN">中文</a>
     </div>
   </div>
-  <script>
-    // 按浏览器语言自动跳转；用户仍可用上方链接手动切换
-    (function () {
-      var lang = (navigator.language || navigator.userLanguage || 'zh').toLowerCase();
-      var target = lang.indexOf('zh') === 0 ? 'zh/index.html' : 'en/index.html';
-      setTimeout(function () { location.replace(target); }, 120);
-    })();
-  </script>
 </body>
 </html>

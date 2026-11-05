@@ -1,6 +1,6 @@
 # 新大地五金官网 v2
 
-苏州新大地五金制品有限公司官网重写版。纯静态多页 HTML，零构建，双语（`/zh/` + `/en/`）。
+苏州市新大地五金制品有限公司官网重写版。纯静态多页 HTML，零构建，双语（`/zh/` + `/en/`）。
 
 旧站位于 `../新大地五金网站/`，保留不动，作为内容参考与回滚基线。
 
@@ -11,13 +11,13 @@
 | 阶段 | 内容 | 状态 |
 |---|---|---|
 | 1 | 设计令牌 + 基础样式 + 组件库 | ✅ 完成 |
-| 1 | 中文首页、英文首页、根域语言跳转页 | ✅ 完成 |
-| 2 | 产品中心（整屏分类橱窗 + 六个分类区块） | ✅ 完成 |
-| 2 | 产品分类页（左目录 + 右产品列表，111 个型号实拍） | ✅ 完成 |
-| 2 | 6 个 SKU 详情页（静态化） | ⬜ 待做，等产品图与规格 |
-| 3 | 关于我们（双屏）/ 联系我们 / 404 | 🟡 关于我们 + 联系我们已完成，404 待做 |
-| 4 | sitemap.xml、robots.txt、JSON-LD、hreflang 全量校验 | ⬜ 待做 |
-| 5 | nginx 配置 + 上线检查 | ⬜ 待做 |
+| 2 | 双语首页（首屏 + 页脚）、根域语言跳转页 | ✅ 完成 |
+| 3 | 产品中心（整屏橱窗 + 六张分类卡） | ✅ 完成 |
+| 4 | 产品分类页（6 分类 / 111 型号 + 规格弹窗） | ✅ 完成 |
+| 5 | 关于我们（深色双屏） | ✅ 完成 |
+| 6 | 联系我们（地图 + 联系信息 + 询盘表单） | ✅ 完成 |
+| 7 | 404 页、sitemap.xml、robots.txt、JSON-LD | ⬜ 待做 |
+| 8 | 上线：nginx 81 端口预览已跑通（`deploy/`） | 🔶 待切正式域名 |
 
 ---
 
@@ -29,260 +29,161 @@ python3 -m http.server 8902
 # 打开 http://127.0.0.1:8902/zh/
 ```
 
-不要直接双击 HTML 打开（`file://` 下相对路径正常，但语言跳转页会跳错目录）。
+不要直接双击 HTML 打开（`file://` 下语言跳转页会跳错目录）。
+桌面另有 `~/Desktop/启动新大地网站.command`，双击起 3212 端口并自动开浏览器。
 
 ---
 
 ## 目录
 
 ```
+index.html              根域语言引导页（按浏览器语言跳 zh/en，noindex）
+zh/ en/                 双语页面，两套结构完全对应
+  index.html            首页（首屏 + 页脚）
+  products.html         产品中心（整屏橱窗 + 七张分类卡）
+  category.html         产品分类页（?cat=cabinets|carts|combination|benches|stands|grills|others）
+  about.html            关于我们（深色双屏：苏州 / 柬埔寨）
+  contact.html          联系我们（地图 + 联系信息 + 询盘表单）
 assets/css/tokens.css   设计令牌。改配色只改这一个文件
 assets/css/base.css     reset、排版基线、布局工具类
-assets/css/site.css     页面组件（头部/首屏/卡片/表格/表单/页脚）
-assets/css/about.css    关于我们双屏（仅 about.html 引用）
-assets/css/products.css 产品中心橱窗 + 分类区块（仅 products.html 引用）
-assets/css/category.css 产品分类页（仅 category.html 引用）
-assets/js/category.js   分类切换、二级筛选、横向滚动条、头部变色；不生成正文
-assets/img/products/    111 个型号的产品图（按分类分目录，webp 900×900）
-assets/js/site.js       移动端菜单、年份、表单校验、头部变色、关于我们切屏、产品中心橱窗；不生成任何正文
-assets/img/hero/        首页首屏背景图 slide-1.jpg（2400×822），slide-2~6 为原轮播备用图
-assets/img/category/    六大分类背景图（1920×658，源图 2480×850）
-assets/img/about/       苏州厂区 / 柬埔寨工厂航拍 / 中柬国旗 SVG
-assets/img/logo/        公司标识、站点图标、首屏蒙版 frontier-mask.png（见下节）
-zh/ en/                 双语页面，两套结构完全对应
+assets/css/site.css     公共组件（头部/首屏/卡片/表格/表单/页脚）
+assets/css/products.css 产品中心专用，仅 products.html 引用
+assets/css/category.css 分类页 + 规格弹窗专用
+assets/css/about.css    关于我们专用
+assets/js/site.js       移动端菜单、年份、表单校验、头部变色、关于我们切屏、产品中心橱窗
+assets/js/category.js   分类页切换与规格弹窗（仅 category.html 引用）
+assets/img/hero/        首页首屏背景图 slide-1.jpg（2200×1237，16:9 车间全景）
+assets/img/category/    橱窗背景 showcase-bg.jpg、分类主图 hero-<cat>.webp、分类卡图 <cat>.jpg（工具柜主图暂缺）
+assets/img/products/    产品图，按分类归档 <cat>/<slug>.webp（900×900 透明底；卡片与弹窗共用）
+assets/img/about/       苏州厂区 / 柬埔寨工厂照片 + 中柬国旗 SVG
+assets/img/logo/        公司标识、站点图标
+assets/img/map/         联系页地图截图
+deploy/                 服务器 nginx 配置与一键脚本
 PLAN.md                 重写方案与旧站问题诊断
+.workbuddy/tmp/         素材生成脚本与中间数据（不进发布包）
+.workbuddy/backup/      历史快照与回退说明（不进发布包）
 ```
+
+**内容全部写在 HTML 里，不用 JS 渲染** —— 这是与旧站最根本的区别，直接影响收录。
+JS 只做交互（菜单、切屏、橱窗、弹窗、头部变色），不生成任何正文。
+
+---
+
+## 全站约定（改动前先看）
+
+- **导航固定 4 项**：主页 / 产品中心 / 关于我们 / 联系我们（英文 Home / Products / About Us / Contact Us）。客户已定稿，不要再加第 5 项。
+- **语言切换固定顺序「中文 | EN」**，不随当前语言调换；当前项白底高亮。10 个页面的结构、类名、aria 必须一致。
+- **当前页导航项 = 变色 + 放大**（`transform: scale(1.1)`，不是 font-size，否则切页会抖），不加背景块。
+- **顶部条（电话/邮箱）**：`index` / `products` / `category` 的 HTML 里还有这段，但三页 CSS 都 `display:none`；`about` / `contact` 已整块删除。实际全站都不显示。
+- **头部有两种形态**：
+  - 深色页（`page-home` / `page-products` / `page-category` / `page-about` / `page-contact`）：透明或深蓝底 + 白色 logo + 白色导航，首页/产品中心/分类页下滑 60px 转实色
+  - Logo 全站统一用白色版 `xindadi-logo-white.png`（所有页面头尾都是深蓝底）
+- **页头不再放「获取报价」按钮**（about / contact 已删；home / products / category 由 CSS 隐藏），转化入口交给各页自身的 CTA。
+
+---
+
+## 首页（index.html）
+
+结构：**首屏 + 页脚**，中间没有其它区块（客户要求「轮播图以下的东西不要了」，已删数字条/产品系列/制造工艺/关于/新闻/询价条）。
+
+| 部分 | 说明 |
+|---|---|
+| `.hero-stage` | 首屏容器，高度 `min(100svh, 920px)`，最矮 600px |
+| `.hs-bg` | 静态背景图 `assets/img/hero/slide-1.jpg`，`object-fit: cover` |
+| `.hero-stage::after` | 两层叠加：① 顶部 150px 渐隐（护导航与 logo）② 径向暗角（中心亮、四周渐深）。**没有整幅压暗**（已按客户要求删除） |
+| `.hs-body` | 前景文案：`XINDADI` + 两行副文案 + 一行小字 |
+| `.hs-bar` | 右下椭圆描边按钮「联系我们 / Contact Us」→ `contact.html` |
+
+- 轮播已取消（原 6 张自动切换 + 指示点 + 缓推近全部移除），无动效、无 JS 依赖
+- 首页顶部条隐藏、头部报价按钮隐藏，转化入口只留首屏椭圆按钮
+- ⚠️ **原 `.hs-scrim` 整幅压暗层已删除**（客户 2026-10-27：图片比源图灰太多）。现在只有 `.hero-stage::after` 的顶部渐隐；要恢复整幅压暗，旧样式存在 `.workbuddy/backup/2026-10-27_1642_scrim-removed/`
+- `slide-2.jpg ~ slide-6.jpg` 是原轮播备用图，当前无页面引用
+
+---
 
 ## 产品中心（products.html）
 
-参考稿：`~/Documents/新大地五金/官网材料整合/8.网页布局的流程/4.png`。
-分类名称与卡片图来源：`~/Documents/新大地五金/官网材料整合/2.内页6张图1/`（六个子目录，一目录一分类）。
-背景图：`~/Documents/新大地五金/官网材料整合/1.6张图/封面1.jpg`（固定一张，不随分类切换）。
+整屏橱窗 `.pc-hero`：背景图 `assets/img/category/showcase-bg.jpg`，**七张**白框分类卡（`.pc-card`，图在 `assets/img/category/<cat>.jpg`）横排在 `.pc-rail` 上，悬停/聚焦哪张，哪张放大并同步左侧标题与 `Including` 涵盖范围清单。底部 `.pc-track` 滑轨可拖动 / 键盘 ←→。
 
-**页面结构：只有一屏，往下没有内容**
-
-`.pc-hero` 整屏橱窗（`min(100svh, 920px)`）→ 页脚。
-
-- `.pc-bg-img` **单张固定背景**（`assets/img/category/showcase-bg.jpg`，源 封面1.jpg，2400×822 / 190KB），
-  带 18s 极缓推近。⚠️ 客户明确取消「背景随分类切换」，不要再做成多层淡入
-- `.pc-scrim` 三段压暗（顶部压头部 / 左侧压文字 / 底部压卡片）。这张底图上沿偏亮，顶部的渐变是必须的
-- `.pc-body` 左侧大标题 + `Including` / 涵盖范围清单
-- `.pc-rail` 分类卡横向滑动，默认高亮第一张；悬停/聚焦哪张，哪张放大（背景不动）
-  - 卡片从容器左边界起排（与标题、涵盖范围同一竖线），右侧越过容器边界伸到屏幕外，第六张露一线提示可滑
-  - 卡片 208×284，高亮时 256×348；轨道 16px 间距。改尺寸要同时改 1024 断点与矮屏断点，否则会跟标题撞上
-  - 超宽屏（约 1920+）六个一屏放得下时，滑动条自动隐藏（`.pc-track-wrap.is-idle`），别留死控件
-- `.pc-track` 底部滑动条，可拖动、可点击，键盘 ←/→ 也能推
-
-⚠️ 老板明确要求：**这一页只做分类入口，往下不要再加任何东西**（产品卡、分类区块、CTA 条都砍掉了，
-产品列表在 `category.html` 里）。`.pc-series` / `.pc-anchor` 那套样式也已一并删除，别再加回来。
-
-**分类与链接**
-
-| 序号 | `?cat=` | 中文 | English | 系列 | 背景图 |
-|---|---|---|---|---|---|
-| 01 | `cabinets` | 工具柜 | Tool Cabinets | TC | `cabinets.jpg` |
-| 02 | `carts` | 工具车 | Tool Carts | MT | `carts.jpg` |
-| 03 | `stands` | 支架 | Stands | TR | `stands.jpg` |
-| 04 | `benches` | 工作台 | Workbenches | WB | `benches.jpg` |
-| 05 | `grills` | 烧烤炉 | Grills | GG | `grills.jpg` |
-| 06 | `others` | 其他钣金制品 | Other Sheet Metal Products | WC | `others.jpg` |
-
-分类名以客户文案 `~/Documents/新大地五金/官网材料整合/7.文案/大标题和文案.png` 为准：
-工具柜 / 工具车 / 支架 / 工作台 / 烧烤炉 / 其他钣金制品。卡片、全站页脚、各页 title 与 description 都已按这套名字统一，
-改名前先跟老板确认（旧站叫 工具箱柜 / 工作桌 / 文件柜 / 工具支架 / 户外烤炉，别混用）。
-
-六张卡片与全站页脚（index / contact / products / category）的分类链接统一指向 `category.html?cat=<上面的值>`。
-⚠️ 不要再写回 `products.html#cabinets` 这类锚点——本页已无对应区块，点了不会动。
-
-**分类卡片图**
-卡片直接用 `assets/img/category/<id>.jpg` 这六张（与分类页横幅同一套素材，1920×658），不再有占位块。
-原图是 2.92:1 横幅、卡面是 0.73:1 竖版，靠 `object-position` 逐个定裁切点（写死在 `products.css` 里）：
-
-| 分类 | object-position |
+| 卡片 | 链接 |
 |---|---|
-| cabinets | 63% 50% |
-| carts | 48% 50% |
-| stands / benches / grills | 50% 50% |
-| others | 34% 55% |
+| 工具柜 / 工具车 / 组合柜 / 工作台 / 支架 / 烧烤炉 / 其他 | `category.html?cat=` `cabinets` / `carts` / `combination` / `benches` / `stands` / `grills` / `others` |
 
-换图后若主体被裁掉，改这几行百分比即可。
-
-**顶部导航**
-本页头部为固定透明覆盖式（`body.page-products`），下滑 60px 转深蓝实色。
-当前栏目**只用橙色区分，不加下划线**（`.page-products .nav__link[aria-current="page"]::after { display: none }`），
-这是客户在参考稿上明确要求的，别改回下划线。
+- 本页顶部条隐藏、头部报价按钮隐藏
+- ⚠️ **原 `.pc-scrim` 整幅压暗层已删除**，改为：`.pc-hero::after` 顶部渐隐（护固定头部 + 左上标题/涵盖范围）+ 底部 170px 渐隐（护滑轨与提示）；卡片文字 `.pc-card__label` 自带半透明深色衬底。中间画面保持原图亮度，别再整幅压暗
+- 分类口径以客户目录为准（工具柜 / 工具车 / 组合柜 / 工作台 / 支架 / 烧烤炉 / 其他钣金）
+- 七张卡图放在 `assets/img/category/<cat>.jpg`，来自客户 `~/Documents/新大地五金/9.新7张图片替换1/1~7.jpg`
+  （按 **1 工具柜 / 2 工具车 / 3 组合柜 / 4 工作台 / 5 支架 / 6 烧烤炉 / 7 其他** 对应），
+  已按卡面 0.73:1 预先裁成 **512×700**，CSS 里不再做二次裁切（换图记得同比例重裁）
+- 七张卡都在首屏，**不要加 `loading="lazy"`**，否则首屏会出现白块
+- 改图后记得同步改 `<img src>` 上的 `?v=` 版本号，否则浏览器会用旧图
 
 ---
 
 ## 产品分类页（category.html）
 
-参考稿：`~/Documents/新大地五金/官网材料整合/8.网页布局的流程/6.png`、`7.png`、`12.png`、`13.png`。
-主图标题与广告语：`~/Documents/新大地五金/官网材料整合/7.文案/大标题和文案.png`（客户定稿，逐条照抄，勿改写）。
+`?cat=` 决定默认分类，**七个分类共 111 个型号**（数据源：`~/Documents/新大地五金/4.官网产品材料/`，客户 2026-10-27 重发包，以此为准）：
 
-| # | 分类 id | 标题（zh / en） | 广告语（zh / en） |
-|---|---|---|---|
-| 1 | `cabinets` | 工具柜 / TOOL CABINETS | 坚固金属柜体，用于车库与车间工具收纳。/ DURABLE METAL STORAGE FOR GARAGE & WORKSHOP TOOLS. |
-| 2 | `carts` | 工具车 / TOOL CARTS | 可移动金属推车，方便工具转运。/ MOBILE METAL TROLLEYS FOR EASY TOOL TRANSPORT. |
-| 3 | `stands` | 支架 / STANDS | 稳固支撑框架，适配锯类及各类设备。/ STURDY SUPPORT FRAMES FOR SAWS AND EQUIPMENT. |
-| 4 | `benches` | **工作台** / WORKBENCHES | 重载作业台面，满足车间加工使用。/ HEAVY-DUTY WORK SURFACES FOR WORKSHOP OPERATION. |
-| 5 | `grills` | 烧烤炉 / GRILLS | 高品质金属烤具，用于户外烹饪。/ PREMIUM METAL BARBECUE UNITS FOR OUTDOOR COOKING. |
-| 6 | `others` | 其他钣金制品 / OTHER SHEET METAL PRODUCTS | 定制钣金加工，满足多样化需求。/ CUSTOMIZED SHEET METAL FABRICATION FOR DIVERSE NEEDS. |
+| cat | 中文 | English | 型号数 | 主图 |
+|---|---|---|---|---|
+| `cabinets` | 工具柜 | Tool Cabinets | 36 | `hero-cabinets.webp` |
+| `carts` | 工具车 | Tool Carts | 9 | `hero-carts.webp` |
+| `combination` | 组合柜 | Combination Cabinets | 17 | `hero-combination.webp` |
+| `benches` | 工作台 | Workbenches | 10 | `hero-benches.webp` |
+| `stands` | 支架 | Stands | 15 | `hero-stands.webp` |
+| `grills` | 烧烤炉 | Grills | 24 | `hero-grills.webp` |
+| `others` | 其他 | Other Sheet Metal Products | 0（素材未到，走空态） | `hero-others.webp` |
 
-⚠️ 英文标题在 HTML 里存首字母大写，靠 `.ct-hero__title { text-transform: uppercase }` 显示全大写。
-⚠️ 分类 4 客户文案写「工作台」，站内其它页面（index / about / contact / products）目前仍写「工作桌」，
-待老板确认后统一。
-素材来源：
-- 主图（每个分类一张，随分类切换）：`3.内页6张图2/`，输出为 `assets/img/category/hero-<cat>.webp`（2480×850）
-- 产品图与型号：`4.官网产品材料/`，输出为 `assets/img/products/<cat>/<slug>.webp`（900×900 透明底，单张约 45KB）
+**七张分类主图**：客户 2026-10-27 给的 `~/Documents/新大地五金/10.新7张图片替换2(1)/1~7.jpg`，
+按 **1 工具柜 / 2 工具车 / 3 组合柜 / 4 工作台 / 5 支架 / 6 烧烤炉 / 7 其他** 对应（与产品目录编号一致）。
+原图 2480×850 → `hero-<cat>.webp`（q82，72–178KB）。
+⚠️ 这七张**只给分类页横幅用**；产品中心那七张小卡是另一套素材（`9.新7张图片替换1/`），
+两套图各自对应客户的两个压缩包，别互相覆盖。
+⚠️ **组合柜**是这次新升的一级分类（原来是工具柜的子类）。组合柜的中文标题/广告语客户没给，是按产品形态写的客观描述，**待客户确认**。
+⚠️ 除烧烤外，其余分类**没有二级分类**（客户把子类拆成了一级），侧栏只显示「全部产品」一个筛选块。
 
-**页面结构**
+**结构**
 
-1. `.ct-hero` 主图区：6 张分类图叠放，切换分类时淡入；左侧标题 + 该分类广告语（文案取自 `7.文案/`）
-2. `.ct-nav` 左侧目录（sticky）：CATALOG 标题 → 6 个一级分类 → 当前分类的二级分类 → CONTACT US
-   - 点一级分类：换主图 / 标题 / 广告语 + 换产品面板
-   - 点二级分类：筛选产品（再点一次取消），按钮加深
-   - 目录过长时只有列表内部滚动，CONTACT US 钉在底部
+1. `.ct-hero__bgs` 主图区：分类主图 `hero-<cat>.webp` 以 CSS 背景叠放，切分类时淡入；左下大标题 + 广告语 + 型号数
+2. `.ct-nav` 左侧目录（sticky）：产品目录 → 7 个一级分类（`.ct-group`）→ 当前分类的二级分类（`.ct-sub`）→ CONTACT US
 3. `.ct-panel` 右侧产品区：两行、横向拖动，底部自定义滚动条；卡片带叠层阴影
-4. `.ct-modal` 产品规格弹窗：点卡片打开 → 客户原版规格图 + 三项参数
-   - 分栏由 `.ct-col` 两两成组（对应参考稿「一行三个、两行」的读法）
-   - 筛掉的卡片进 `.ct-pool` 隐藏池，**必须留在 DOM 里**，否则二次筛选找不回来
+   - 卡片信息区（客户模板）：橙色 `Mdl.` 小标 + **类型名**（`Tool Chest` / `顶柜`）占一行，型号单独压在**灰条**（`#E8EDF2`）上
+   - 没有类型名的型号（如支架）把型号放到标题行、不显示灰条；没有型号的（如 Garage Storage Cabinet 1）标题行放名称
+   - 标题过长在窄屏省略号截断，不要换行撑高卡片
+   - 筛掉的卡片进隐藏池，**必须留在 DOM 里**，否则二次筛选找不回来
+4. `.ct-modal` 规格弹窗：点卡片弹出产品大图 + 三项参数
 
-**数据来源与规范**
+**图片策略（客户 2026-10-27 明确）**
 
-| 项 | 说明 |
+| 用途 | 用哪张图 |
 |---|---|
-| 分类 | 工具柜 31 / 工具车 31 / 支架 15 / 工作桌 10 / 烧烤炉 24 / 其他钣金制品 0（素材未到，走空态） |
-| 排序 | 按源目录序号（`1.` `2.` … `14.`），不是字典序 |
-| 卡片标题 | 型号加粗 + 类型名（顶柜/中柜/底柜/侧柜/壁柜/抽屉底柜…）；无型号的新品用类型名，右上角打 NEW |
-| 图片挑选 | 优先 `png.png`（透明抠图）；没有则取最大的透明大图；只剩规格图时按固定比例裁出产品照片区 |
-| 卡片正面 | 只显示型号 + 类型名，不显示尺寸（卡片太窄，且尺寸在弹窗里有完整版） |
+| 分类页卡片展示图 | `png.png`（透明底抠图） |
+| 弹窗里的产品大图 | 同上，**复用同一张**（JS 从 `.ct-card__media img` 取） |
+| 提取三项参数 | 同目录另一张（`型号.png` / `参数.png` / `尺寸信息.png`），只做 OCR，**不上站** |
 
-⚠️ 分类里「工作桌 / 工作台」的写法见上方说明，客户文案用「工作台」。
+**规格弹窗口径**（客户 2026-10-28 定稿的表格样式：橙色 `Mdl.` 标 + 深蓝/浅蓝双列）
 
-## 规格弹窗（.ct-modal）
-
-点产品卡 → 弹窗显示该型号的**第二张图（客户原版规格图）** + 下面三项参数。
-
-**三项参数的口径与文案**（老板确认）
-
-| # | 中文 | English | 对应规格图字段 |
+| 行 | 中文 | English | 卡片属性 |
 |---|---|---|---|
-| 1 | 产品尺寸（未包装） | Product Size (unpacked) | `总的来说` / `Overall` / `产品尺寸` |
-| 2 | 包装尺寸（含外箱） | Packing Size (carton) | `套餐` / `Package` / `包装尺寸` |
-| 3 | 40HQ 装箱量 | Loading Qty (40HQ) | `数量` / `Qty` / `集装箱的数量` |
+| 1 | 产品尺寸（宽 × 深 × 高） | Product Dimension (W*D*H) | `data-size-in` / `data-size-mm` |
+| 2 | 包装尺寸（宽 × 深 × 高） | Packing Dimension (W*D*H) | `data-pack-in` / `data-pack-mm` |
+| 3 | 装箱量 / 40HQ（件） | QTY/40HQ (pcs) | `data-qty` |
 
-> 客户原图里的 `总的来说` / `套餐` 是机器翻译（Overall / Package），站上已换成上面这套说法。
+- 左格深蓝 `--navy-700` 放**英寸**，右格浅蓝 `#D9E1EC` 放**毫米**；左格右缘用 `clip-path` 做斜切，跟客户参考图一致
+- 橙色 `Mdl.` 标签用品牌橙 `--cta`；型号加粗，类型名小字跟在后面
+- 缺值时单格显示 `—`，只有装箱量缺值才显示「详见规格图」
+- 参数由 `spec_params_v3.json` 提供（110 张规格表 OCR：106 有三项、4 个表本身空白）
+- mm 与 inch 自相矛盾的（客户表本身笔误）只保留 mm
+- AC41C 的规格表 OCR 断行严重（`686~1092 m / m`），已在 `parse_v3.py` 里用 `OVERRIDE` 写死
 
-**图片已裁掉参数文字块**
-规格图底部原本印着 `总的来说 / 套餐 / 数量`，和弹窗下方的三项参数重复。
-`crop_specs.py` 用 OCR 的文字坐标找到参数块起始行，把整块裁掉，只保留「型号标题 + 产品照片」，
-再裁四周白边、2 倍放大存 webp（共 2.3MB）。
-- 裁了 100 张；1 张（`garage-storage-cabinet-3`）没有独立规格图，保持原样
-- 10 张是**纯文字规格表**（`尺寸信息.png` / `参数.png`，如新品 Wall Cabinet、烟熏炉），本身没有产品照，
-  这类卡片不打 `data-spec`，弹窗直接不显示图片区，避免又出现一块重复文字
+**产品卡片的点击 vs 拖动**：位移超过 10px 才算拖动，否则视为点击开弹窗（曾因阈值缺失导致每次点击都被吞掉）。
 
-**数据怎么来的（不是手写，也不是编的）**
-1. `build_specs.py` 为每个型号挑出规格图 → `assets/img/specs/<cat>/<slug>.webp`（2 倍放大，单张约 30KB）
-2. `parse_specs.py` 调 macOS Vision OCR（`~/.workbuddy/skills/macos-screenshot-ocr`）识别 111 张图，
-   按标签分段取三个值 → `.workbuddy/tmp/spec_params.json`
-3. `gen_category.py` 把参数写进卡片的 `data-size` / `data-pack` / `data-qty`，弹窗只做显隐赋值
-
-**已知缺口（如实呈现，前端显示「详见规格图」）**
-
-| 情况 | 数量 | 型号 |
-|---|---|---|
-| 规格表本身就没填数值 | 2 | `GARAGE STORAGE CABINET 2`（Overall/Package/Qty 全空）、`GARAGE STORAGE CABINET 3`（无独立规格图） |
-| 该型号无规格图（只有一张产品图） | 1 | 工具车「新品」 |
-| 有尺寸但无装箱量 | 28→32 张缺 qty | 主要是烧烤类与部分新品表 |
-| 只有英寸没有 mm | 5 | 新品 Wall Cabinet 1/2、Drawer Bottom Cabinet 1/2、Side Locker |
-
-⚠️ 客户原表里有 6 张的 mm 与 inch 互相矛盾（例：`723×390×540mm` 写成 `28.5×15.4×12.3 in`），
-这类只保留 mm、丢掉英寸值，避免把笔误发到站上。
-
-⚠️ **英文站目前仍显示中文规格图**（烧烤类 24 款、支架/工作桌部分型号，客户只给了中文表）。
-需要客户补英文规格图；拿到后覆盖 `assets/img/specs/` 同名文件即可，HTML 不用改。
+**生成脚本**：`scan_v3.py`（扫元数据，秒级）→ `render_v3.py --from N --to M`（出图，**必须分批**，
+单张约 3.3 秒，111 张会超单条命令时限）→ `ocr_prep_v3.py` + macOS Vision OCR → `parse_v3.py` → `gen_category.py`（出 HTML）。
 
 ---
 
-
-**生成脚本**：`.workbuddy/tmp/build_assets.py`（产品图）→ `build_specs.py`（规格图）→ `parse_specs.py`（OCR 取参数）→ `gen_category.py`（出 HTML）。
-改了分类名、广告语、产品命名规则，改脚本重跑，不要手改 111 张卡片。
-
-**入口**：`products.html` 的六张分类卡已指向 `category.html?cat=xxx`；页脚分类链接同样。
-
----
-
-
-## 品牌标识
-
-原稿：`~/Documents/新大地五金/官网材料整合/5.公司logo材料/新大地-大logo.png`（956×192，白色透明底）。
-原稿图形紧贴画布边缘，已四周补 6% 透明留白后按宽 640 导出。
-
-| 文件 | 用途 |
-|---|---|
-| `xindadi-logo-white.png` | **页面实际引用**。全站头部（首页透明/实色、关于、联系页均为深蓝底）与页脚统一用它 |
-| `xindadi-logo-navy.png` | 备用浅底场景（白底 header、邮件签名、浅色物料） |
-| `xindadi-mark-navy/white.png` | 只取椭圆 N 图形，正方形，用于头像、水印、深色底小标识 |
-| `favicon-32/192.png`、`apple-touch-icon.png`、`favicon-512.png` | 站点图标：深蓝圆角方块 + 白色 N |
-
-- 页面里统一写作 `<img class="brand__logo" src="...">`，高度由 CSS 控制（36px，页脚 40px，≤640px 时 30/34px），宽度自动
-- 换色只需重导同名文件，HTML 不用动
-- 若以后出现白底头部，把该处的 `src` 换成 `xindadi-logo-navy.png` 即可，不要用 CSS filter 反相（半透明边缘会发灰）
-
-**内容全部写在 HTML 里，不用 JS 渲染** —— 这是与旧站最根本的区别，直接影响收录。
-目前首页首屏也没有任何 JS 依赖（轮播已取消），禁用 JS 时整页照常显示。
-
----
-
-## 首页首屏（静态背景）
-
-结构：
-
-| 部分 | 说明 |
-|---|---|
-| `.hero-stage` | 首屏容器，高度 `min(100svh, 920px)`，最矮 600px |
-| `.hs-bg` | 静态背景图，`object-fit: cover`，固定使用 `assets/img/hero/slide-1.jpg`（封面 1） |
-| `.hs-scrim` | 压暗层，左侧重、底部渐变，保证任何底图上的白字都清晰 |
-| `.hs-body` | 前景文案：`XINDADI` + 两行副文案 + 一行小字 |
-| `.hs-bar` | 右下椭圆描边按钮「联系我们 / Contact Us」→ `contact.html` |
-
-- **轮播已取消**（原 6 张自动切换 + 左下指示点 + 缓推近全部移除），只留封面 1 一张静态底图，无动效
-- 首页头部悬浮在首屏上（`.page-home`），下滑超过 60px 转为实色深蓝；
-  首页顶部条（电话/邮箱）隐藏、头部「获取报价」按钮隐藏，转化入口只留首屏那个椭圆按钮
-- 其他页面不受影响，仍是白底 sticky 头部 + 顶部条
-
-**首页只有首屏 + 页脚**
-老板要求「轮播图以下的东西不要了」，已删掉数字条 / 六大系列 / 制造工艺 / 关于 / 新闻 / 询价条六个区块，
-`<main>` 里只剩首屏那一个 section，后面直接接页脚。
-`site.css` 里 `.stat-strip` `.series-grid` `.process` `.split` `.news-grid` `.cta-band` 等样式**没删**，
-留给产品中心 / 关于我们等页面复用，别当死代码清掉。
-
-**换图**：替换 `assets/img/hero/slide-1.jpg`（同名覆盖即可，无需改代码）。
-`slide-2.jpg ~ slide-6.jpg` 是原轮播的备用图，目前没有任何页面引用。
-
-### 首屏 logo 镂空蒙版（`.hero-veil`）
-
-按老板要求加在最上层：整屏纯黑，只有 logo 笔画处镂空，透过笔画看得到底图。
-参考稿 `8.网页布局的流程/2.png`。
-
-| 项 | 值 |
-|---|---|
-| 蒙版图 | `assets/img/logo/frontier-mask.png`（由 `5.公司logo材料/logo-黑色.png` 裁到笔画边界、缩到 1400×318 导出，约 47KB） |
-| 合成方式 | 两层 mask + `mask-composite: exclude`：第 1 层整块不透明，第 2 层是 logo 的 alpha，相减＝除笔画外全黑 |
-| 落定尺寸 | `--veil-hole: 48%`（占视口宽），≤900px 时 62% |
-| 落定位置 | `--veil-y: 25%`（锚点在视口高度 25% 处，实测 logo 中心约在 30% 高度，即「顶部与居中的中间」） |
-| 动画 | `veil-shrink` 1600ms + 150ms 延迟，`cubic-bezier(.22,1,.36,1)`；镂空宽度 340% → 48%，由大到小落定 |
-| 层级 | veil `z-index:4`，压在 `.hs-body` 之上；`.hs-bar` 提到 `z-index:5`，**椭圆按钮始终露在蒙版之上可点** |
-| 无障碍 | `aria-hidden="true"` + `pointer-events:none`；`prefers-reduced-motion` 时不播动画直接落定 |
-
-⚠️ 这层是**常驻**的：动画结束后不会消失，首屏的 `XINDADI` 文案与底图都被盖住（只剩 logo 笔画里透出的画面）。
-若改成「开场动画、播完淡出」，给 `.hero-veil` 追加一段 `animation: veil-shrink 1600ms ... , veil-out 600ms 2s forwards` 即可。
-
-⚠️ 换 logo：把新 logo 的黑色稿裁到笔画边界、清成「透明底 + 纯黑笔画」，覆盖 `frontier-mask.png` 同名文件，CSS 不用动。
-
----
-
-## 关于我们（深色双屏）
+## 关于我们（about.html）
 
 按客户参考稿 `~/Documents/新大地五金/官网材料整合/8.网页布局的流程/3.png` 落地。
 
@@ -292,31 +193,60 @@ PLAN.md                 重写方案与旧站问题诊断
 | `.about-slide` | 一屏一 section，`min-height: 100dvh`，`scroll-snap-align: start` |
 | `#suzhou` | 第一屏 · 中国苏州：文字左 / 图片右，4 个指标（550800 / 150000 / 2 / 8） |
 | `#cambodia` | 第二屏 · 柬埔寨西哈努克：图片左 / 文字右（`.about-slide--flip`），指标 960708 / 215000 / 5 / 15 |
-| `.about-figure` | 圆角 14px + 立体投影（近 6/16、中 20/34、远 44/64 三层 + 冷色光晕 + 1px 亮边），`::before` 为贴地椭圆软影，`::after` 加顶部高光与底部压暗；高度 `clamp(280px, 52vh, 480px)` |
+| `.about-figure` | 按效果图拉高：`height:100%` 撑满行高 + `min-height: clamp(420px,66vh,660px)`，图片列最大 500px；圆角 14px + 立体投影（近 6/16、中 20/34、远 44/64 三层 + 冷色光晕 + 1px 亮边），`::before` 为贴地椭圆软影，`::after` 加顶部高光与底部压暗；矮屏 52vh、手机端恢复自适应 |
 
+- 图片旁的文案（导语、公司简介、指标名）统一用无衬线系统字体（`--font-body`），不对齐 mono 字重
 - 切换：滚轮一次手势一屏（≤900px 不劫持）、↑↓ / PageUp·PageDown / 空格 / Home·End、右侧圆点、触屏滑动
 - `about.html#cambodia` 可直达第二屏
 - ≤900px 取消全屏吸附改为单列自然滚动；矮屏（≤800px 高）压缩字号与图片高度
 - 图片源：`官网材料整合/网页新布局/网页新布局_05.jpg`（2480px 宽）裁切去黑边，压缩到 760px 宽 q88
-（第一张写 `src` 并带 `is-active`，其余写 `data-src` 懒加载）；指示点由 JS 按张数自动生成。
+- 本页满屏展示，**没有页脚**
+
+---
+
+## 联系我们（contact.html）
+
+深蓝整页（`.page-contact`），头部固定反色，**无顶部条**。
+
+- `.contact-map` 百度地图嵌入 + 「在百度地图中打开」
+- `.contact-list` 三项：地址（江苏省苏州市相城区黄埭镇高阳路 99 号，邮编 215143）、联系电话（总机 0512-6548-8105 / 传真 +86-512-6548-4169）、邮箱
+- `.contact-form` 询盘表单：只做前端校验，未配置 action 时阻止真实提交并提示（后端接上后填 action 即可）
+- ⚠️ 待确认：总机号按参考图取 `0512-6548-8105`，旧站写的是 `6571-7395`，确认后要全站统一
+
+---
+
+## 品牌标识
+
+素材来自 `官网材料整合/5.公司logo材料/`。
+
+| 文件 | 用途 |
+|---|---|
+| `xindadi-logo-white.png` | **页面实际引用**（全站头尾都是深蓝底） |
+| `xindadi-logo-navy.png` | 备用（浅色底） |
+| `xindadi-mark-navy/white.png` | 纯 N 图形标记 |
+| `favicon-32/192.png`、`apple-touch-icon.png`、`favicon-512.png` | 站点图标（深蓝圆角方块 + 白 N） |
+
+- 中英文站都用中文「新大地」横版标；英文站靠 `alt` 承载英文名
+- 引用写法 `<img class="brand__logo" src="...">`，高度由 CSS 控制（头部 36px，页脚 40px，≤640px 时 30/34px），宽度自动
+- 换色只重导同名文件，HTML 不用动；**不要用 CSS filter 反相**（半透明边缘会发灰）
+- FRONTIER 英文标未上站（站内从未出现该品牌名，避免品牌分裂）
 
 ---
 
 ## 图片替换规范
 
-页面里所有产品图位置目前是「蓝图网格 + 标签」的占位块。图到位后按下面替换，不要改布局：
+产品图位置原本是「蓝图网格 + 标签」的占位块，图到位后按下面替换，不要改布局：
 
 **1. 文件放这里**
 
 ```
-assets/img/hero/slide-1.jpg                首页首屏静态背景（横图 2400×822，宽幅 2.92:1）
-assets/img/about/workshop.jpg               关于我们车间（横图 1600×1200）
-assets/img/products/tc2d-1.jpg              产品主图（方图 1200×1200）
-assets/img/products/tc2d-2.jpg              产品副图
+assets/img/hero/slide-1.jpg        首页首屏背景（2200×1237，16:9；源图 11520×6480 压到 2200 宽 q72，约 420KB）
+assets/img/category/hero-<cat>.webp  六分类主图（2480×850）
+assets/img/category/<cat>.jpg        白框里的分类卡图（竖版 3:4，208×284）
+assets/img/products/<cat>/<slug>.webp 产品图（900×900 透明底）
+assets/img/specs/<cat>/<slug>.webp    规格图（弹窗用）
+assets/img/about/workshop.jpg      关于我们车间（横图 1600×1200）
 ```
-
-首屏背景图已经到位（源图 2480×850 压到 2400×822 / 质量 75，约 330KB）。
-其余产品图命名统一 `{sku 小写}-{序号}.jpg`，SKU 见 `PLAN.md` 第四节。
 
 **2. 改 HTML**
 
@@ -330,9 +260,8 @@ assets/img/products/tc2d-2.jpg              产品副图
 
 <!-- 替换后 -->
 <div class="media media--tall">
-  <img class="media__img" src="../assets/img/hero/factory.jpg"
-       alt="新大地五金苏州工厂全景" width="1200" height="1500"
-       fetchpriority="high">
+  <img class="media__img" src="../assets/img/about/workshop.jpg"
+       alt="新大地五金苏州工厂车间" width="1600" height="1200" loading="lazy">
 </div>
 ```
 
@@ -346,6 +275,23 @@ assets/img/products/tc2d-2.jpg              产品副图
 
 ---
 
+## 素材与数据生成脚本
+
+都在 `.workbuddy/tmp/`，改分类名、广告语、产品命名规则时改脚本重跑，**不要手改 111 张卡片**。
+
+| 脚本 | 作用 |
+|---|---|
+| `build_assets.py` | 产品图 → `assets/img/products/<cat>/<slug>.webp` |
+| `build_specs.py` | 挑出每个型号的规格图 → `assets/img/specs/` |
+| `parse_specs.py` | 调 macOS Vision OCR 识别 111 张规格图 → `spec_params.json`（三项参数） |
+| `crop_specs.py` | 裁掉规格图底部与弹窗重复的参数文字块 |
+| `gen_category.py` | 生成 `category.html`（卡片 + data-size/pack/qty） |
+
+产品数据来自 `官网材料整合/4.官网产品材料/`（111 个型号，每个两张图：透明底产品图 + 规格图），
+分类主图来自 `2.内页6张图1/`，广告语来自 `7.文案/`。
+
+---
+
 ## 设计约束（改动前必读）
 
 橙色 `#f4731d` 对比度只有 2.87:1，**白底橙字和白字橙底都不过 AA**。所以：
@@ -354,13 +300,32 @@ assets/img/products/tc2d-2.jpg              产品副图
 - 小字橙色文字用 `--cta-ink`（`#C2560C`）
 - 主按钮一律深蓝底白字（11.5:1）
 
+圆角克制在 2–6px（客户明确要求的那几处椭圆按钮除外）；动效只保留 120–280ms 的颜色/位移过渡。
+字体纯系统栈，不引 Google Fonts（国内访问 + 服务器部署）。
+
 详见 `assets/css/tokens.css` 顶部注释。
 
 ---
 
-## 待客户提供
+## 备份与回退
 
-1. **产品实拍图**（最重要，没有图视觉做不"像工厂"）
-2. **Logo 源文件** AI/SVG —— 目前是字母 X 的占位方块
+项目**没有 git**，回退靠 `.workbuddy/backup/` 里的快照，每个目录都有 `说明.md`：
+
+| 目录 | 内容 |
+|---|---|
+| `2026-10-23_1030_pre-logo-mask/` | 加首屏 logo 蒙版之前的 4 个文件（首页×2 + site.css + site.js） |
+| `2026-10-27_1511_veil-version/` | 带 logo 镂空蒙版的版本（已按老板要求回退，留档备用） |
+
+发布包在 `../新大地五金网站-发布包/`（只打 `index.html` + `zh/` + `en/` + `assets/`，排除 `.preview/`、`.workbuddy/`、`PLAN.md`、`README.md`）。
+
+---
+
+## 待办 / 待客户提供
+
+1. **404 页**、`sitemap.xml`、`robots.txt`、JSON-LD
+2. **英文规格图**（烧烤 24 款等，客户只给了中文表）
 3. **ICP 备案号** —— 目前是 `苏ICP备XXXXXXXX号` 占位
-4. 是否需要英文版公司简介的精修（现译文沿自旧站）
+4. **总机号**确认（参考图 6548-8105 vs 旧站 6571-7395）
+5. **全站「工作桌 / 工作台」用词统一**：分类页用法是「工作台」，其余页面仍写「工作桌」
+6. 询盘表单后端（当前只做前端校验）
+7. 正式上线：删 `X-Robots-Tag: noindex`、80 端口 server_name 切到 `www.xindadi.com`、H3C 网关加 `:81` 映射

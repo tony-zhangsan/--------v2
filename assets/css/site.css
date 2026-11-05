@@ -116,8 +116,7 @@
 
 .nav__link:hover { color: var(--text); }
 
-/* 当前页提示：不要背景、不要下划线、不要框。
-   只做两件事——文字提纯白 + 整项放大 7%。
+/* 当前页提示：文字提纯白 + 整项放大 7% + 底部一条橙色横线（2026-11-05 客户指定）。
    放大用 transform 而非 font-size：transform 不参与布局，
    所以切换页面时其他导航项的宽度和位置完全不动，不会左右抖。 */
 .nav__link[aria-current="page"] {
@@ -129,6 +128,20 @@
      给一层极淡的暗影兜底，不改观感只提可读性 */
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
   transition: color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+/* 选中项的橙色横线：紧贴文字下方（约 3px 间隙），随文字一起放大。
+   用 calc(50% - 0.95em) 定位：50% 是导航盒垂直中心，
+   0.95em ≈ 文字半行高 + 间隙，这样 header 高度变化时线始终跟着文字走 */
+.nav__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: calc(50% - 0.95em);
+  height: 3px;
+  border-radius: 2px;
+  background: var(--cta);
 }
 
 .nav__link[aria-current="page"]:hover { color: #fff; }
@@ -375,21 +388,25 @@
   object-position: center;
 }
 
-/* 压暗层：左侧重、底部渐变，保证任何底图上文案都清晰 */
-.hs-scrim {
+/* 顶部渐隐：只压住导航那一条，底图主体保持原始亮度（整幅压暗层已按要求移除） */
+.hero-stage::after {
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg,
-      rgba(9, 19, 31, 0.86) 0%,
-      rgba(9, 19, 31, 0.60) 34%,
-      rgba(9, 19, 31, 0.14) 64%,
-      rgba(9, 19, 31, 0.40) 100%),
-    linear-gradient(0deg,
-      rgba(9, 19, 31, 0.66) 0%,
-      rgba(9, 19, 31, 0) 42%);
+    /* 顶部：护住导航与 logo */
+    linear-gradient(180deg,
+      rgba(9, 19, 31, 0.6) 0,
+      rgba(9, 19, 31, 0.26) 46px,
+      rgba(9, 19, 31, 0) 150px),
+    /* 中间亮、四周渐深的暗角 */
+    radial-gradient(100% 88% at 50% 44%,
+      rgba(9, 19, 31, 0) 18%,
+      rgba(9, 19, 31, 0.24) 44%,
+      rgba(9, 19, 31, 0.54) 70%,
+      rgba(9, 19, 31, 0.86) 100%);
 }
 
 /* 前景文案 */
@@ -442,55 +459,7 @@
   left: 0;
   right: 0;
   bottom: clamp(1.75rem, 5vh, 3.5rem);
-  z-index: 5; /* 压在蒙版层之上，保证按钮始终可点 */
-}
-
-/* ===================== 首屏 logo 镂空蒙版 =====================
-   整屏纯黑，logo 笔画处镂空（透出底图），镂空由大到小落定。
-   实现：两层 mask 用 exclude 合成 —— 第 1 层整块不透明，第 2 层是 logo 的 alpha，
-   相减后得到「除笔画外全是黑」。 */
-.hero-veil {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  background: #000;
-  pointer-events: none;
-
-  --veil-hole: 48%;   /* 落定后镂空宽度（占视口宽） */
-  --veil-y: 25%;      /* 镂空垂直锚点：越小越靠上 */
-
-  -webkit-mask-image: linear-gradient(#000, #000), url("../img/logo/frontier-mask.png");
-  mask-image: linear-gradient(#000, #000), url("../img/logo/frontier-mask.png");
-  -webkit-mask-repeat: no-repeat, no-repeat;
-  mask-repeat: no-repeat, no-repeat;
-  -webkit-mask-size: 100% 100%, var(--veil-hole) auto;
-  mask-size: 100% 100%, var(--veil-hole) auto;
-  -webkit-mask-position: 0 0, 50% var(--veil-y);
-  mask-position: 0 0, 50% var(--veil-y);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  animation: veil-shrink 1600ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
-}
-
-@keyframes veil-shrink {
-  from {
-    -webkit-mask-size: 100% 100%, 340% auto;
-    mask-size: 100% 100%, 340% auto;
-  }
-  to {
-    -webkit-mask-size: 100% 100%, var(--veil-hole) auto;
-    mask-size: 100% 100%, var(--veil-hole) auto;
-  }
-}
-
-/* 窄屏：镂空再大一点，否则笔画细到看不出形状 */
-@media (max-width: 900px) {
-  .hero-veil { --veil-hole: 62%; --veil-y: 26%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-veil { animation: none; }
+  z-index: 3;
 }
 
 .hs-bar__inner {
@@ -512,10 +481,12 @@
   backdrop-filter: blur(6px);
 }
 
-.btn--pill:hover {
-  background: #fff;
-  border-color: #fff;
-  color: var(--navy-900);
+/* hover：按钮外观不变，文字与描边一起变品牌橙（客户指定） */
+.btn--pill:hover,
+.btn--pill:focus-visible {
+  color: var(--cta);
+  border-color: var(--cta);
+  background: rgba(9, 19, 31, 0.26);
   transform: translateY(-2px);
 }
 
@@ -1122,6 +1093,12 @@ a.news-card:hover {
     text-shadow: none;
   }
 
+  /* 抽屉里的橙线通栏铺满整行，与桌面端留边距的样式区分 */
+  .nav__link[aria-current="page"]::after {
+    left: 0;
+    right: 0;
+  }
+
   .nav-toggle { display: flex; }
   .header__actions .btn--primary { display: none; }
 
@@ -1183,7 +1160,7 @@ a.news-card:hover {
 .contact-hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(3.25rem, 6vw, 5.5rem) clamp(2.25rem, 4vw, 3.25rem);
+  padding-block: clamp(1.25rem, 2.4vw, 2rem) clamp(1.5rem, 2.6vw, 2.25rem);
   text-align: center;
 }
 
@@ -1249,9 +1226,9 @@ html[lang="zh-CN"] .contact-hero h1 { letter-spacing: 0.14em; }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.02fr 1fr;
+  grid-template-columns: 1.22fr 1fr;
   gap: clamp(2rem, 4.2vw, 4.25rem);
-  align-items: start;
+  align-items: stretch;   /* 地图跟着右栏文字高度走 */
 }
 
 /* 地图：静态底图（百度地图导出图），保持原始比例不裁切 */
@@ -1259,13 +1236,16 @@ html[lang="zh-CN"] .contact-hero h1 { letter-spacing: 0.14em; }
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: var(--navy-800);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
+/* 高度由右栏文字决定：底图 cover 填满，只做极轻微的左右裁切 */
 .contact-map__canvas {
   position: relative;
-  aspect-ratio: 875 / 610;
+  flex: 1 1 auto;
+  min-height: 220px;
   overflow: hidden;
   background: var(--surface-2);
 }
@@ -1477,6 +1457,8 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
 /* ---------- 响应式 ---------- */
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .contact-map { height: auto; }
+  .contact-map__canvas { flex: none; aspect-ratio: 875 / 610; min-height: 0; }
   .contact-form-head { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
 }
 
@@ -1495,7 +1477,7 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
   }
   .page-contact .nav__link[aria-current="page"] { color: #fff; }
 
-  .contact-hero { padding-block: var(--space-12) var(--space-8); }
+  .contact-hero { padding-block: var(--space-8) var(--space-6); }
   .contact-item { grid-template-columns: 46px 1fr; gap: var(--space-4); }
   .contact-item__icon { width: 46px; height: 46px; }
   .contact-map__bar { flex-wrap: wrap; gap: var(--space-2); }

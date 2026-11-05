@@ -287,7 +287,7 @@
 
 /* ============================================================
    产品规格弹窗
-   卡片上带 data-spec / data-size / data-pack / data-qty，内容全部来自 HTML，
+   卡片上带 data-size / data-pack / data-qty，弹窗里的产品图直接复用卡片那张 png.png，
    本模块只负责显隐与赋值。
    ============================================================ */
 (function () {
@@ -306,21 +306,15 @@
   var lastFocus = null;
   var dragged = false;
 
-  function val(name, extra) {
-    var box = modal.querySelector('[data-p="' + name + '"]');
+  function fill(key, text, dash) {
+    var box = modal.querySelector('[data-p="' + key + '"]');
     if (!box) return;
-    if (!extra) {
-      box.textContent = EMPTY;
+    if (text) {
+      box.textContent = text;
+      box.classList.remove('is-empty');
+    } else {
+      box.textContent = dash === false ? EMPTY : '—';
       box.classList.add('is-empty');
-      return;
-    }
-    box.classList.remove('is-empty');
-    box.textContent = extra.split('|')[0];
-    if (extra.indexOf('|') > -1) {
-      var s = document.createElement('span');
-      s.className = 'ct-param__sub';
-      s.textContent = extra.split('|')[1];
-      box.appendChild(s);
     }
   }
 
@@ -331,20 +325,39 @@
     if (card.getAttribute('data-code')) subEl.hidden = !card.getAttribute('data-name');
     else subEl.hidden = true;
 
-    var spec = card.getAttribute('data-spec');
-    if (spec) {
-      img.src = spec;
-      img.alt = (card.getAttribute('data-code') || '') + ' ' + (card.getAttribute('data-name') || '') + ' 规格图';
+    // 展示图与详情图都用 png.png（同一张），直接从卡片里取
+    var media = card.querySelector('.ct-card__media img');
+    if (media && media.getAttribute('src')) {
+      img.src = media.getAttribute('src');
+      img.alt = media.getAttribute('alt') || '';
       figure.hidden = false;
     } else {
-      // 该型号的规格表只有文字（没有产品图），图片区整个不显示，避免和下方参数重复
       img.removeAttribute('src');
       figure.hidden = true;
     }
 
-    val('size', card.getAttribute('data-size'));
-    val('pack', card.getAttribute('data-pack'));
-    val('qty', card.getAttribute('data-qty'));
+    // 左列英寸、右列毫米；装箱量缺值时才显示“详见规格图”
+    fill('size-in', card.getAttribute('data-size-in'));
+    fill('size-mm', card.getAttribute('data-size-mm'));
+    fill('pack-in', card.getAttribute('data-pack-in'));
+    fill('pack-mm', card.getAttribute('data-pack-mm'));
+    fill('qty', card.getAttribute('data-qty'), false);
+
+    // 材质 / 板厚 / 结构：只有带这些属性的型号才显示整块，缺哪行就藏哪行
+    var matBlock = modal.querySelector('[data-mat-block]');
+    if (matBlock) {
+      var matMap = { material: 'data-material', thickness: 'data-thickness', structure: 'data-structure' };
+      var hasMat = false;
+      Object.keys(matMap).forEach(function (k) {
+        var box = modal.querySelector('[data-p="' + k + '"]');
+        if (!box) return;
+        var val = card.getAttribute(matMap[k]) || '';
+        box.textContent = val;
+        if (val) hasMat = true;
+        if (box.parentNode) box.parentNode.hidden = !val;
+      });
+      matBlock.hidden = !hasMat;
+    }
 
     modal.classList.add('is-open');
     modal.removeAttribute('aria-hidden');

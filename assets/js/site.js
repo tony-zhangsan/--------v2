@@ -6,6 +6,24 @@
 (function () {
   'use strict';
 
+  /* ---------- 分享码保留 ----------
+     预览站必须带 ?sharecode=xxx 才放行，而站内跳转（如 products.html）
+     会把它丢掉，之后从地址栏复制出去的链接就打不开了。
+     这里把参数补到所有站内链接上，跳转后地址栏依然带参数。 */
+  (function keepShareCode() {
+    var m = location.search.match(/[?&]sharecode=([^&]+)/);
+    if (!m) return;
+
+    var suffix = 'sharecode=' + m[1];
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) === '#') return;
+      if (/^(mailto:|tel:|javascript:|https?:|\/\/)/i.test(href)) return;
+      if (/[?&]sharecode=/.test(href)) return;
+      a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + suffix);
+    });
+  })();
+
   /* ---------- 移动端菜单 ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
@@ -59,6 +77,12 @@
       if (invalid) {
         e.preventDefault();
         invalid.focus();
+        return;
+      }
+
+      // 已接入云服务的表单：校验通过后交给 cloud-inquiry.js 提交，这里只拦默认行为
+      if (form.hasAttribute('data-cloud-form')) {
+        e.preventDefault();
         return;
       }
 

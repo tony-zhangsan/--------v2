@@ -4,12 +4,40 @@
    ------------------------------------------------------------
    结构：
    .pc-hero        整屏容器（100svh）
-     .pc-bgs       六张分类背景图，交叉淡入
-     .pc-scrim     压暗层
+     .pc-bg-img    橱窗背景图
      .pc-body      左侧大标题 + 涵盖范围
      .pc-rail      白框分类卡（横向滑动）
      .pc-track     底部滑动条（可拖动）
    ============================================================ */
+
+/* 背景浅色蒙版及文字区域渐隐，分类卡片保持原始颜色。 */
+.pc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* 顶部：护住固定头部 */
+    linear-gradient(180deg,
+      rgba(9, 19, 31, 0.62) 0,
+      rgba(9, 19, 31, 0.42) 96px,
+      rgba(9, 19, 31, 0.22) 180px,
+      rgba(9, 19, 31, 0) 280px),
+    /* 左上角：只压标题与「涵盖范围」那一块，向右 45% 处淡出 */
+    radial-gradient(120% 78% at 0% 0%,
+      rgba(9, 19, 31, 0.66) 0%,
+      rgba(9, 19, 31, 0.42) 34%,
+      rgba(9, 19, 31, 0.14) 56%,
+      rgba(9, 19, 31, 0) 72%),
+    /* 底部：护住白色滑轨与拖动提示 */
+    linear-gradient(0deg,
+      rgba(9, 19, 31, 0.58) 0,
+      rgba(9, 19, 31, 0.3) 70px,
+      rgba(9, 19, 31, 0) 170px),
+    /* 提亮背景，不覆盖前景卡片和文字。 */
+    linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38));
+}
 
 /* ===================== 页面头部：悬浮在橱窗之上 ===================== */
 .page-products .topbar { display: none; }
@@ -67,29 +95,6 @@
 @keyframes pc-drift {
   from { transform: scale(1.04); }
   to   { transform: scale(1); }
-}
-
-/* 压暗层：左侧重（压文字）、底部渐变（压卡片） */
-.pc-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    /* 顶部：压住固定头部，这张底图上沿偏亮 */
-    linear-gradient(180deg,
-      rgba(9, 19, 31, 0.55) 0%,
-      rgba(9, 19, 31, 0.22) 12%,
-      rgba(9, 19, 31, 0) 22%),
-    linear-gradient(90deg,
-      rgba(9, 19, 31, 0.9) 0%,
-      rgba(9, 19, 31, 0.68) 32%,
-      rgba(9, 19, 31, 0.2) 64%,
-      rgba(9, 19, 31, 0.46) 100%),
-    linear-gradient(0deg,
-      rgba(9, 19, 31, 0.86) 0%,
-      rgba(9, 19, 31, 0.26) 34%,
-      rgba(9, 19, 31, 0) 62%);
 }
 
 /* 文字区 */
@@ -184,6 +189,13 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
   transition: height var(--dur-slow) var(--ease-out);
 }
 
+/* 该分类主图暂缺时留空占位：深色底，不显示破图或“待补”字样 */
+.pc-card__media--empty {
+  background:
+    radial-gradient(120% 120% at 70% 20%, rgba(59, 100, 148, 0.45) 0%, rgba(18, 37, 60, 0) 65%),
+    linear-gradient(140deg, #12253C 0%, #1A3352 60%, #12253C 100%);
+}
+
 .pc-card__media img {
   width: 100%;
   height: 100%;
@@ -191,13 +203,8 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
   object-position: center;
 }
 
-/* 六张分类图是 2.92:1 横幅，裁进 0.73:1 的卡面时按主体位置微调水平裁切点 */
-.pc-card[data-cat="cabinets"] .pc-card__media img { object-position: 63% 50%; }
-.pc-card[data-cat="carts"]    .pc-card__media img { object-position: 48% 50%; }
-.pc-card[data-cat="stands"]   .pc-card__media img { object-position: 50% 50%; }
-.pc-card[data-cat="benches"]  .pc-card__media img { object-position: 50% 50%; }
-.pc-card[data-cat="grills"]   .pc-card__media img { object-position: 50% 50%; }
-.pc-card[data-cat="others"]   .pc-card__media img { object-position: 34% 55%; }
+/* 卡面图已按 0.73:1 预先裁好（assets/img/category/<id>.jpg，512×700），这里不再做二次裁切。
+   换图若不裁、直接放原图，用 object-position 按主体位置微调即可。 */
 
 .pc-card__label {
   display: block;
@@ -206,6 +213,7 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.68);
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -330,3 +338,20 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
 @media (prefers-reduced-motion: reduce) {
   .pc-bg-img { animation: none; }
 }
+
+/* 卡片文字自带深色衬底：去掉了整幅压暗层后，白字压在浅色地板上会看不见 */
+.pc-card__label {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  background: rgba(9, 19, 31, 0.55);
+  color: #fff;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/* 底部提示是小字，靠在浅地板上加一点紧阴影，比整体压暗更省画质 */
+.pc-track__hint { color: rgba(255, 255, 255, 0.86); text-shadow: 0 1px 2px rgba(9, 19, 31, 0.65); }
+.pc-track { background: rgba(255, 255, 255, 0.45); }

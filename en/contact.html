@@ -21,7 +21,7 @@
 
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/base.css">
-<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site.css?v=3">
 
 <script type="application/ld+json">
 {
@@ -187,8 +187,7 @@
         </p>
       </div>
 
-      <form class="form-grid contact-form" data-validate novalidate action=""
-            data-pending-message="The form is not connected to a mail service yet — please email info@xindadi.com in the meantime.">
+      <form class="form-grid contact-form" data-validate data-cloud-form data-lang="en" novalidate>
         <div class="field">
           <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -270,9 +269,10 @@
       <div class="footer-col">
         <h4>Products</h4>
         <a href="category.html?cat=cabinets">Tool Cabinets</a>
-        <a href="category.html?cat=carts">Tool Carts</a>
-        <a href="category.html?cat=stands">Stands</a>
-        <a href="category.html?cat=benches">Workbenches</a>
+        <a href="category.html?cat=carts">Tool Cart</a>
+        <a href="category.html?cat=combination">Combination Cabinets</a>
+        <a href="category.html?cat=benches">Workbench</a>
+        <a href="category.html?cat=stands">Stand</a>
         <a href="category.html?cat=grills">Grills</a>
         <a href="category.html?cat=others">Other Sheet Metal Products</a>
       </div>
@@ -298,6 +298,8 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
 <script src="../assets/js/site.js"></script>
+<script src="../assets/js/cloud-inquiry.js"></script>
 </body>
 </html>
