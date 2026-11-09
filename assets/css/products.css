@@ -132,8 +132,9 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
   font-weight: var(--weight-semibold);
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.94);
+  color: #fff;
   margin-bottom: 0.6875rem;
+  text-shadow: 0 1px 4px rgba(9, 19, 31, 0.85), 0 0 14px rgba(9, 19, 31, 0.6);
 }
 
 .pc-including__list {
@@ -141,7 +142,8 @@ html[lang="en"] .pc-title { font-size: clamp(2.25rem, 4.4vw, 3.75rem); }
   line-height: 1.95;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.66);
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(9, 19, 31, 0.85), 0 0 14px rgba(9, 19, 31, 0.6);
 }
 
 /* ===================== 分类卡片轨道 ===================== */

@@ -137,42 +137,52 @@
 
 .ct-layout {
   display: grid;
-  grid-template-columns: 206px minmax(0, 1fr);
+  grid-template-columns: 234px minmax(0, 1fr);
   gap: clamp(16px, 2.2vw, 34px);
   align-items: start;
 }
 
 /* ---------- 左侧目录 ---------- */
+/* 目录随页面一起滚动（不再 sticky），高度由脚本同步为「右侧两行产品」的高度：
+   滚动时左右两条边界同步偏移，目录下边沿与第二行产品下边沿齐平。
+   见 category.js → syncNavHeight() */
 .ct-nav {
-  position: sticky;
-  top: calc(var(--nav-height) + 16px);
   display: flex;
   flex-direction: column;
   background: #F1F3F6;
   padding: 14px 14px 16px;
-  max-height: calc(100vh - var(--nav-height) - 32px);
+  height: var(--ct-nav-h, auto);
+  min-height: 0;
   overflow: hidden;         /* 目录过长时只让列表滚动，CONTACT US 始终可见 */
 }
 
-/* 列表超出时内部滚动，联系按钮钉在底部 */
+/* 列表超出时内部滚动，联系按钮钉在底部。
+   目录高度与产品区对齐后，烧烤炉展开 7 个二级会略超，这里给一条可见的细滚动条做提示 */
 .ct-nav__list {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: thin;                    /* Firefox */
+  scrollbar-color: #C3CAD3 transparent;
   padding-right: 2px;
 }
+
+/* Chrome / Safari 细滚动条：只在目录内容超出时出现，用来提示下方还有分类 */
+.ct-nav__list::-webkit-scrollbar { width: 5px; }
+.ct-nav__list::-webkit-scrollbar-track { background: transparent; }
+.ct-nav__list::-webkit-scrollbar-thumb { background: #C3CAD3; border-radius: 3px; }
+.ct-nav__list::-webkit-scrollbar-thumb:hover { background: #AEB7C2; }
 
 .ct-nav__head,
 .ct-nav__contact {
   display: block;
   width: 100%;
-  padding: 13px 10px;
+  padding: 19px 10px;
   border: 0;
   font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: var(--weight-semibold);
-  letter-spacing: 0.2em;
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -182,14 +192,17 @@
   cursor: default;
   background: var(--navy-900);
   color: #fff;
-  letter-spacing: 0.22em;
 }
 
+/* 分类块的上下间距由脚本 syncNavGap() 均分到剩余空间里：
+   gap 与列表上下内边距共用同一个变量，所以 CATALOG→首块、块与块、末块→CONTACT US
+   这三处的间距完全相等，目录底部不会剩下一条空档。窄屏不参与。 */
 .ct-nav__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 10px 0;
+  gap: var(--ct-gap, 12px);
+  margin: 0;
+  padding: var(--ct-gap, 12px) 2px;
 }
 
 .ct-group { display: flex; flex-direction: column; gap: 6px; }
@@ -377,6 +390,7 @@
 .ct-card__title {
   display: flex;
   align-items: stretch;
+  min-height: 22px;         /* 没有产品名时也保留标题条高度（与 Mdl. 块同高） */
   margin: 0 0 4px;
   padding: 0 7px 0 0;
   background: #D6DBE0;
@@ -401,6 +415,7 @@
   clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 50%, 100% 100%, 0 100%);
 }
 
+/* 标题行：橙色 Mdl. 标 + 产品名 */
 .ct-card__name {
   align-self: center;
   min-width: 0;
@@ -418,17 +433,21 @@
 /* 没有 Mdl. 标时（只有名称），补回左边距，避免文字贴边 */
 .ct-card__title > .ct-card__name:first-child { padding-left: 7px; }
 
+/* 浅灰条：固定放型号 */
 .ct-card__code {
   margin: 0;
-  padding: 4px 7px 5px;
+  padding: 5px 7px 6px;
   background: #EFF2F5;
   border-radius: 1px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   font-weight: var(--weight-medium);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #4A5C70;
+  color: #3D5064;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ct-card__new {
@@ -513,9 +532,9 @@
 
 /* ===================== 响应式 ===================== */
 @media (max-width: 1024px) {
-  .ct-layout { grid-template-columns: 176px minmax(0, 1fr); }
+  .ct-layout { grid-template-columns: 202px minmax(0, 1fr); }
   .ct-col { width: clamp(160px, 22vw, 210px); }
-  .ct-nav__head, .ct-nav__contact { padding: 13px 8px; letter-spacing: 0.16em; }
+  .ct-nav__head, .ct-nav__contact { padding: 17px 8px; font-size: 15px; letter-spacing: 0.04em; }
 }
 
 @media (max-width: 860px) {
@@ -527,6 +546,7 @@
   /* 目录改成一条横向滚动的分类条，二级分类跟在所属分类后面 */
   .ct-nav {
     position: static;
+    height: auto;
     max-height: none;
     display: block;
     overflow: visible;
@@ -540,9 +560,9 @@
     flex-direction: row;
     gap: 8px;
     margin: 0 0 10px;
+    padding: 0 0 2px;          /* 覆盖桌面的 --ct-gap 内边距，横条不参与均分 */
     overflow-x: auto;
     overflow-y: visible;
-    padding-bottom: 2px;
     scrollbar-width: none;
   }
 
@@ -576,11 +596,10 @@
   .ct-col { width: 148px; }
   .ct-card__media { padding: 8px; }
   .ct-card__body { padding: 7px 6px 8px; }
-  .ct-card__title { padding: 0 5px 0 0; }
+  .ct-card__title { padding: 0 5px 0 0; min-height: 18px; }
   .ct-card__mdl { padding: 3px 7px 3px 4px; margin-right: 5px; font-size: 9.5px; }
-  .ct-card__code { padding: 4px 6px; }
-  .ct-card__code { font-size: 11px; }
-  .ct-card__name { font-size: 10px; }
+  .ct-card__code { padding: 4px 7px 5px; font-size: 12.5px; }
+  .ct-card__name { font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

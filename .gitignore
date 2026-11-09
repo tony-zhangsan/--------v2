@@ -11,7 +11,8 @@
 .workbuddy/tmp/*.jpeg
 .workbuddy/tmp/*.webp
 .workbuddy/tmp/*.log
-.workbuddy/tmp/_bak_*
+.workbuddy/tmp/_bak*
+.workbuddy/tmp/_cand*
 .workbuddy/tmp/_trash/
 
 # 平台标记文件与本地连接配置

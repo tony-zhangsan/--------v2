@@ -6,6 +6,9 @@ ROOT = "/Users/zhanghao/WorkBuddy/新大地五金网站-v2"
 PRODUCTS = json.load(open(f"{ROOT}/.workbuddy/tmp/products_v3.json"))
 PARAMS = json.load(open(f"{ROOT}/.workbuddy/tmp/spec_params_v3.json"))
 
+# 产品图版本号：换图后 +1，强制浏览器重新下载
+IMG_VER = 2
+
 CATS = [
  dict(id='cabinets', zh='工具柜', en='Tool Cabinets', nav_zh='工具柜', nav_en='Tool Cabinets',
       ad_zh='坚固金属柜体，用于车库与车间工具收纳。',
@@ -42,6 +45,7 @@ TYPE_EN = {
  'garage storage cabinet': 'Garage Storage Cabinet', 'welding cart': 'Welding Cart',
  'wood bracket': 'Wood Bracket', 'with lid': 'With Lid', 'with folding legs': 'With Folding Legs',
  '4-drawer rolling tool cabinet': '4-Drawer Rolling Tool Cabinet',
+ 'fire pit with blower': 'Fire Pit with Blower', 'fire pit': 'Fire Pit',
 }
 TYPE_ZH = {
  'top chest': '顶柜', 'middle cabinet': '中柜', 'bottom cabinet': '底柜', 'side locker': '侧柜',
@@ -49,6 +53,7 @@ TYPE_ZH = {
  '1-drawer bottom cabinet': '单抽屉底柜', '2-drawer bottom cabinet': '双抽屉底柜',
  'welding cart': '焊接车', 'wood bracket': '木工支架', 'with lid': '带盖', 'with folding legs': '折叠腿',
  '4-drawer rolling tool cabinet': '四抽工具柜',
+ 'fire pit with blower': '火盆（带鼓风机）', 'fire pit': '火盆',
 }
 
 # 材质 / 板厚 / 结构：目前只有客户 2026-11-05 提供的 OPE704 产品结构表，
@@ -108,23 +113,22 @@ def card_html(p, lang, eager=False):
     code = p['code']
     nm_en = en_name(p)
     nm_zh = zh_name(p)
-    if lang == 'zh':
-        bold = code or nm_zh or nm_en
-        if code:
-            sub_line = nm_zh
-        else:
-            sub_line = nm_en if (nm_en and nm_en != bold) else ''
-    else:
-        bold = code or nm_en
-        sub_line = nm_en if code else ''
+    # 标题行放产品名（可空），浅灰条固定放型号
+    name_txt = nm_zh if lang == 'zh' else nm_en
+    title_txt = name_txt          # 没有名称就空着，不拿型号顶上来
+    band_txt = code
+    # 橙色 Mdl. 标常驻：产品名为空时也保留，只空出右侧名称位置
+    mdl_html = '<span class="ct-card__mdl">Mdl.</span>'
 
-    alt = ' '.join(x for x in [code, nm_en] if x)
+    # alt / aria 文案跟页面语言走：中文页只出现中文，英文页只出现英文
+    nm_alt = nm_zh if lang == 'zh' else nm_en
+    cat_alt = p['cat_zh'] if lang == 'zh' else p['cat_en']
+    alt = ' '.join(x for x in [code, nm_alt] if x)
     badge = '<span class="ct-card__new">New</span>' if p['is_new'] else ''
-    if sub_line:
-        title_txt, band_txt = sub_line, code
-    else:
-        title_txt, band_txt = bold, ''
-    band_html = (f'\n                <p class="ct-card__code">{esc(band_txt)}</p>' if band_txt else '')
+    # 型号灰条始终输出：没有名称时留占位，保证所有卡片高度一致
+    band_inner = esc(band_txt) if band_txt else '&#160;'
+    band_cls = 'ct-card__code' + ('' if band_txt else ' is-empty')
+    band_html = f'\n                <p class="{band_cls}">{band_inner}</p>'
     loading = 'eager' if eager else 'lazy'
 
     # --- 三项参数（来自客户规格图 OCR，缺失就留空，由前端显示“详见规格图”） ---
@@ -147,14 +151,14 @@ def card_html(p, lang, eager=False):
             f'data-structure="{esc(mat.get("structure",""))}"',
         ]
     attrs = ' '.join(a for a in attrs if a)
-    label = ('查看 ' + (code or bold) + ' 规格｜' if lang == 'zh' else 'View specifications for ') + alt
-    return f'''            <article class="ct-card" data-sub="{p['sub_slug']}" data-code="{esc(code)}" data-name="{esc(sub_line or '')}" {attrs}
+    label = ('查看 ' + (code or name_txt) + ' 规格｜' if lang == 'zh' else 'View specifications for ') + alt
+    return f'''            <article class="ct-card" data-sub="{p['sub_slug']}" data-code="{esc(code)}" data-name="{esc(name_txt)}" {attrs}
                      role="button" tabindex="0" aria-haspopup="dialog" aria-label="{esc(label)}">{badge}
               <div class="ct-card__media">
-                <img src="../{p['img']}" alt="{esc(alt)} — {esc(p['cat_zh'])}" width="258" height="258" loading="{loading}" decoding="async">
+                <img src="../{p['img']}?v={IMG_VER}" alt="{esc(alt)} — {esc(cat_alt)}" width="258" height="258" loading="{loading}" decoding="async">
               </div>
               <div class="ct-card__body">
-                <p class="ct-card__title"><span class="ct-card__mdl">Mdl.</span><span class="ct-card__name">{esc(title_txt)}</span></p>{band_html}
+                <p class="ct-card__title">{mdl_html}<span class="ct-card__name">{esc(title_txt)}</span></p>{band_html}
               </div>
             </article>'''
 
@@ -299,7 +303,7 @@ def build(lang):
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/site.css">
-<link rel="stylesheet" href="../assets/css/category.css?v=11">
+<link rel="stylesheet" href="../assets/css/category.css?v=21">
 <link rel="icon" href="../assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../assets/img/logo/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../assets/img/logo/apple-touch-icon.png">
@@ -489,7 +493,7 @@ def build(lang):
 </footer>
 
 <script src="../assets/js/site.js"></script>
-<script src="../assets/js/category.js?v=5"></script>
+<script src="../assets/js/category.js?v=8"></script>
 </body>
 </html>
 '''

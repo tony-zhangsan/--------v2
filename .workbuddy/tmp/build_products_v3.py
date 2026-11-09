@@ -134,6 +134,15 @@ for catdir in sorted(os.listdir(SRC)):
             ))
 
 products.sort(key=lambda p: (p['cat_order'], p['order']))
+
+# 客户确认（2026-11-06）：FP021901 目录名里的 19IN 是尺寸规格、不是品名，品名就是火盆。
+# 重建 JSON 时保留这项修正，避免被源目录名覆盖。
+# 客户确认（2026-11-06）：FP100701 品名只用 Fire Pit，不带「with Blower」后缀。
+NAME_OVERRIDE = {'FP021901': 'fire pit', 'FP100701': 'Fire Pit'}
+for p in products:
+    if p['code'] in NAME_OVERRIDE:
+        p['name'] = NAME_OVERRIDE[p['code']]
+
 json.dump(products, open(f"{TMP}/products_v3.json", 'w'), ensure_ascii=False, indent=1)
 from collections import Counter
 c = Counter(p['cat'] for p in products)

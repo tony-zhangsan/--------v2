@@ -163,6 +163,86 @@
   var scrolls = {};
   panels.forEach(function (p) { scrolls[p.dataset.cat] = initScroll(p); });
 
+  /* ---------- 目录高度对齐产品区 ----------
+     目录不再 sticky，改成跟着页面一起滚；高度取当前分类「两行产品」的高度，
+     这样滚动时左右两条边界同步上下偏移，目录下边沿与第二行产品下边沿齐平。
+     窄屏（≤860px）目录是一条横向分类条，不参与对齐。 */
+  var navEl = document.querySelector('.ct-nav');
+
+  function syncNavHeight() {
+    if (!navEl) return;
+    if (window.innerWidth <= 860) {
+      navEl.style.removeProperty('--ct-nav-h');
+      return;
+    }
+    var panel = panels.filter(function (p) { return p.classList.contains('is-active'); })[0];
+    var track = panel && panel.querySelector('.ct-track');
+    if (!track) {
+      navEl.style.removeProperty('--ct-nav-h');
+      return;
+    }
+    /* 用「产品区视口下边沿 − 目录上边沿」：视口自带 2px 上 / 16px 下内边距，
+       取视口而不是 track，目录下边沿才能压到产品区底边那条线上 */
+    var vp = panel.querySelector('.ct-viewport');
+    var navTop = navEl.getBoundingClientRect().top;
+    var bottom = (vp || track).getBoundingClientRect().bottom;
+    var h = Math.round(bottom - navTop);
+    if (h > 0) navEl.style.setProperty('--ct-nav-h', h + 'px');
+    else navEl.style.removeProperty('--ct-nav-h');
+  }
+
+  /* ---------- 目录间距均分 ----------
+     分类块的间距、以及首尾到「产品目录」「联系我们」的间距共用变量 --ct-gap。
+     把剩余高度平均分给「块数 + 1」个间隙：块与块等距，末块正好贴住 CONTACT US，
+     目录底部不再剩下一条空档。窄屏横向分类条不参与。 */
+  var navList = navEl && navEl.querySelector('.ct-nav__list');
+  var navHead = navEl && navEl.querySelector('.ct-nav__head');
+  var navContactEl = navEl && navEl.querySelector('.ct-nav__contact');
+  var NAV_GAP_MIN = 10;    /* 分类多、空间不够时的最小间距，超出就由列表内部滚动 */
+  var NAV_GAP_MAX = 26;    /* 分类少时的上限，避免块被摊得过散 */
+
+  function syncNavGap() {
+    if (!navEl || !navList || !navHead || !navContactEl) return;
+    if (window.innerWidth <= 860 || !navEl.style.getPropertyValue('--ct-nav-h')) {
+      navEl.style.removeProperty('--ct-gap');
+      return;
+    }
+    var n = navList.children.length;
+    if (!n) { navEl.style.removeProperty('--ct-gap'); return; }
+
+    /* 先把间距压成 0 再量，量到的才是内容本身的高度 */
+    navEl.style.setProperty('--ct-gap', '0px');
+    var content = 0;
+    for (var i = 0; i < n; i++) content += navList.children[i].getBoundingClientRect().height;
+
+    var cs = getComputedStyle(navEl);
+    var innerH = navEl.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    var fixed = navHead.getBoundingClientRect().height +
+                navContactEl.getBoundingClientRect().height;
+    var gap = (innerH - fixed - content) / (n + 1);
+    gap = Math.max(NAV_GAP_MIN, Math.min(NAV_GAP_MAX, gap));
+    navEl.style.setProperty('--ct-gap', gap.toFixed(2) + 'px');
+  }
+
+  function refreshNav() { syncNavHeight(); syncNavGap(); }
+
+  window.addEventListener('resize', refreshNav);
+  refreshNav();
+
+  if (typeof ResizeObserver === 'function') {
+    var navRO = new ResizeObserver(refreshNav);
+    panels.forEach(function (p) {
+      var t = p.querySelector('.ct-track');
+      if (t) navRO.observe(t);
+    });
+  }
+
+  /* 面板淡入有 translateY(6px) 动画，首帧量到的底边会偏低 6px，
+     动画结束后重量一次，把这几像素收回来 */
+  panels.forEach(function (p) {
+    p.addEventListener('animationend', refreshNav);
+  });
+
   /* ---------- 分类切换 ---------- */
   function activate(cat, sub, opts) {
     opts = opts || {};
@@ -224,6 +304,8 @@
       countEl.hidden = false;
     }
     if (scrolls[panel.dataset.cat]) scrolls[panel.dataset.cat].sync();
+    syncNavHeight();          /* 筛完卡片行数可能变，目录高度跟着重算 */
+    syncNavGap();             /* 高度变了，分类块的均分间距也要跟着重算 */
   }
 
   groups.forEach(function (g) {
