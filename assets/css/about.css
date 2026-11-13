@@ -88,17 +88,26 @@ html { scroll-snap-type: y mandatory; }
   grid-template-columns: minmax(320px, 500px) minmax(0, 1fr);
 }
 
-.about-copy { align-self: start; padding-top: clamp(0.75rem, 3vh, 2rem); }
+.about-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(0.75rem, 3vh, 2rem);
+}
+/* 正文紧跟眉标（原来这里 margin-top:auto，会把正文顶到下半区，眉标下方留一大块空白）；
+   剩余空间全部交给底部指标条吃掉 */
+.about-eyebrow + .about-para { margin-top: 0; }
 .about-slide--flip .about-figure { order: -1; }
 
 /* ---------- 文案 ---------- */
 .about-eyebrow {
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;   /* 参考稿：整行居中 */
+  gap: 16px;
   margin-bottom: var(--space-6);
   font-family: var(--font-body);
-  font-size: 1.0625rem;      /* 17px */
+  font-size: 1.25rem;        /* 20px */
   font-weight: var(--weight-bold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -106,28 +115,29 @@ html { scroll-snap-type: y mandatory; }
 }
 
 .about-flag {
-  width: 40px;
-  height: 27px;
+  width: 44px;
+  height: 30px;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
 }
 
 .about-para {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  line-height: 1.8;
+  font-size: 1.0625rem;      /* 17px */
+  line-height: 1.72;
   letter-spacing: 0;
-  text-transform: none;
-  color: rgba(255, 255, 255, 0.72);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
 }
-.about-para + .about-para { margin-top: 0.85rem; }
+.about-para + .about-para { margin-top: 1.1rem; }
 
 /* ---------- 四个指标 ---------- */
 .about-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-4);
-  margin-top: clamp(1.75rem, 3.6vh, 2.75rem);
+  margin-top: auto;                        /* 推到右栏底部 */
+  padding-top: clamp(1.75rem, 3.6vh, 2.75rem);  /* 空间不足时保底间距 */
 }
 
 .about-stat {
@@ -292,10 +302,10 @@ html { scroll-snap-type: y mandatory; }
 /* ---------- 中文：取消全大写 ---------- */
 html[lang="zh-CN"] .about-para {
   text-transform: none;
-  font-size: var(--text-body);
-  line-height: 1.95;
+  font-size: 1.0625rem;
+  line-height: 1.85;
   letter-spacing: 0;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.92);
 }
 html[lang="zh-CN"] .about-title { letter-spacing: 0.14em; }   /* 与联系页中文标题一致 */
 html[lang="zh-CN"] .about-eyebrow { letter-spacing: 0.2em; }
@@ -326,6 +336,10 @@ html[lang="zh-CN"] .about-stat__label { font-family: var(--font-body); letter-sp
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-8);
   }
+  .about-copy { align-self: auto; display: block; padding-top: 0; }
+  .about-eyebrow + .about-para,
+  .about-stats { margin-top: revert; }
+  .about-stats { margin-top: 1.75rem; }
   .about-slide--flip .about-figure { order: 0; }
   .about-figure { height: auto; min-height: 0; border-radius: 12px; }
   .about-figure::before { left: -4%; right: -4%; bottom: -40px; height: 34px; filter: blur(9px); }
@@ -355,10 +369,10 @@ html[lang="zh-CN"] .about-stat__label { font-family: var(--font-body); letter-sp
 @media (max-width: 560px) {
   .about-slide { padding: calc(var(--nav-height) + 1px + var(--space-8)) 0 44px; }
   .about-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
-  .about-para { font-size: var(--text-xs); }
-  html[lang="zh-CN"] .about-para { font-size: var(--text-sm); }
-  .about-eyebrow { font-size: 0.9375rem; gap: 12px; }
-  .about-flag { width: 32px; height: 22px; }
+  .about-para { font-size: var(--text-sm); }
+  html[lang="zh-CN"] .about-para { font-size: var(--text-body); }
+  .about-eyebrow { font-size: 1.0625rem; gap: 12px; }
+  .about-flag { width: 34px; height: 23px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

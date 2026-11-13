@@ -1295,6 +1295,9 @@ html[lang="zh-CN"] .contact-hero h1 { letter-spacing: 0.14em; }
 
 html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
 
+/* 第一条引导语的字面上缘与地图上边线对齐：抵掉 1.6 行高的半行距 */
+.contact-intro > .contact-intro__lead:first-child { margin-top: -0.3em; }
+
 .contact-list {
   margin-top: clamp(2rem, 3.6vw, 2.75rem);
   display: grid;
@@ -1329,7 +1332,7 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
 
 .contact-item__label {
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: 0.875rem;            /* 12px → 14px */
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
