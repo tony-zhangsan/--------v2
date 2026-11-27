@@ -1160,7 +1160,7 @@ a.news-card:hover {
 .contact-hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 2.6vw, 2.25rem);
+  padding-block: clamp(2rem, 3.6vw, 3rem) clamp(2.25rem, 4vw, 3.25rem);
   text-align: center;
 }
 
@@ -1278,37 +1278,42 @@ html[lang="zh-CN"] .contact-hero h1 { letter-spacing: 0.14em; }
 
 /* ---------- 右侧文案 ---------- */
 .contact-intro__lead {
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  line-height: 1.6;
-  letter-spacing: 0.04em;
+  font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.55;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #fff;
   max-width: 44ch;
 }
 
-.contact-intro__lead + .contact-intro__lead {
-  margin-top: var(--space-5);
+.contact-intro__sub {
+  margin-top: var(--space-6);
+  font-size: var(--text-body);
   font-weight: var(--weight-regular);
-  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 52ch;
 }
 
-html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
+html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.04em; text-transform: none; }
 
-/* 第一条引导语的字面上缘与地图上边线对齐：抵掉 1.6 行高的半行距 */
-.contact-intro > .contact-intro__lead:first-child { margin-top: -0.3em; }
+/* 第一条引导语的字面上缘与地图上边线对齐 */
+.contact-intro > .contact-intro__lead:first-child { margin-top: -0.25em; }
 
 .contact-list {
-  margin-top: clamp(2rem, 3.6vw, 2.75rem);
+  margin-top: clamp(2.25rem, 4vw, 3rem);
   display: grid;
-  gap: clamp(1.5rem, 2.6vw, 2rem);
+  gap: clamp(1.75rem, 3vw, 2.25rem);
 }
 
 .contact-item {
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: var(--space-5);
-  align-items: start;
+  align-items: center;
 }
 
 .contact-item__icon {
@@ -1328,7 +1333,7 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
   color: var(--cta-large);
 }
 
-.contact-item__body { padding-top: 3px; }
+.contact-item__body { padding-top: 0; }
 
 .contact-item__label {
   font-family: var(--font-mono);
@@ -1341,15 +1346,15 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
 }
 
 .contact-item__value {
-  font-size: var(--text-sm);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.66);
-  letter-spacing: 0.02em;
+  font-size: var(--text-body);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.01em;
 }
 
 .contact-item__value + .contact-item__value { margin-top: 2px; }
 
-.contact-item__value a { color: rgba(255, 255, 255, 0.86); }
+.contact-item__value a { color: #fff; }
 .contact-item__value a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- 询盘 ---------- */
@@ -1479,3 +1484,11 @@ html[lang="zh-CN"] .contact-intro__lead { letter-spacing: 0.03em; }
   html[lang="zh-CN"] .contact-hero h1 { letter-spacing: 0.1em; }
   .contact-map__bar span { font-size: 10px; letter-spacing: 0.04em; }
 }
+
+/* ===== 2026-11-16 全站导航换几何字体 ===== */
+@font-face { font-family: "Adventor"; src: url("../fonts/adventor-regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Adventor"; src: url("../fonts/adventor-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+:root { --font-gothic: "Adventor", "Century Gothic", "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+/* 导航（含手机端抽屉）；中文页的中文字自动回退到苹方/雅黑 */
+.nav__link { font-family: var(--font-gothic); }
